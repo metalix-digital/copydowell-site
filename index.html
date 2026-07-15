@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CopydoWell — Copy, sort, and filter data between Google Sheets</title>
-<meta name="description" content="CopydoWell is a Google Sheets add-on by Metalix that copies, sorts, and filters data between spreadsheets, and sends mail merge emails with attachments and images, manually or automatically.">
+<title>CopydoWell — Copy, sort, filter, and mail merge for Google Sheets</title>
+<meta name="description" content="CopydoWell is a Google Sheets add-on and companion Chrome extension by Metalix that copies, sorts, and filters data between spreadsheets, and sends mail merge emails, manually or automatically.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
   <div class="wrap">
     <h1>CopydoWell</h1>
-    <p>Copy, sort, and filter data between Google Sheets — plus mail merge with attachments and images. Manually or automatically.</p>
+    <p>Copy, sort, filter, and mail merge data between Google Sheets — as a Sheets add-on or a Chrome extension.</p>
   </div>
 </header>
 
@@ -28,59 +28,62 @@
     <p>On this page</p>
     <ul>
       <li><a href="#what-it-does">What it does</a></li>
-      <li><a href="#install">Install</a></li>
-      <li><a href="#data-tools">Using Data Tools (copy, sort, filter)</a></li>
-      <li><a href="#automation">Automation</a></li>
-      <li><a href="#mail-merge">Using Mail Merge</a></li>
+      <li><a href="#which-one">Sheets add-on vs. Chrome extension — which one?</a></li>
+      <li><a href="#addon">Google Sheets add-on</a></li>
+      <li><a href="#extension">Chrome extension</a></li>
       <li><a href="#support">Support</a></li>
     </ul>
   </div>
 
   <h2 id="what-it-does">What it does</h2>
+  <p>CopydoWell moves data between spreadsheets and sends personalized bulk email, without formulas, IMPORTRANGE, or manual copy-paste. It's available in two forms that share the same core idea — pull, sort, filter, and mail merge — but work a little differently:</p>
   <ul>
-    <li><strong>Pull data across spreadsheets</strong> — connect any source spreadsheet by URL and bring its data into a sheet you choose, into an existing tab or a new one.</li>
-    <li><strong>Filter before it lands</strong> — combine multiple conditions (equals, contains, greater/less than, is empty, and more) that must all match, so only the rows you need come through.</li>
-    <li><strong>Sort automatically</strong> — pick any column to sort by, ascending or descending, applied as part of the same operation.</li>
-    <li><strong>Automate it</strong> — set CopydoWell to run on its own: whenever the source sheet is edited, whenever a linked Google Form is submitted, or on a recurring schedule.</li>
-    <li><strong>Mail merge</strong> — send a personalized email to every matching row in a sheet, with dynamic attachments and inline images pulled from Google Drive.</li>
+    <li>A <strong>Google Sheets add-on</strong>, installed from the Google Workspace Marketplace, opened from the Sheets Extensions menu.</li>
+    <li>A <strong>Chrome extension</strong>, installed from the Chrome Web Store, opened as a side panel next to any Google Sheet.</li>
   </ul>
 
-  <h3>Who it's for</h3>
-  <p>Teams who regularly consolidate, clean, or route data between Google Sheets, or send bulk personalized emails from spreadsheet data — without writing formulas or scripts themselves. CopydoWell adds simple sidebars inside Google Sheets that anyone in an organization can use.</p>
-
-  <h2 id="install">Install</h2>
-  <p>CopydoWell is installed from the Google Workspace Marketplace directly into Google Sheets. Once installed, open its tools from the <strong>Extensions</strong> menu in any Google Sheet:</p>
+  <h2 id="which-one">Which one should I use?</h2>
+  <p>Both do the same core job. A few differences worth knowing:</p>
   <ul>
-    <li><strong>Extensions → CopydoWell → Open Data Tools</strong> — copy, sort, filter, and automation</li>
-    <li><strong>Extensions → CopydoWell → Mail Merge</strong> — bulk personalized email</li>
+    <li>The <strong>Chrome extension</strong> is a one-time $1 purchase after 5 free uses, and additionally supports <strong>multiple named scheduled triggers</strong> you can list, edit, and delete; a <strong>rich text editor</strong> (bold/italic/color) for Mail Merge messages; and <strong>file attachments</strong> (from Drive links shared as "Anyone with the link can view").</li>
+    <li>The <strong>Sheets add-on</strong> is free, supports edit-triggered and form-submit-triggered automation (in addition to scheduling) which the extension cannot do, but its Mail Merge does not support attachments or rich text formatting.</li>
   </ul>
 
-  <h2 id="data-tools">Using Data Tools (copy, sort, filter)</h2>
-  <p>Open <strong>Extensions → CopydoWell → Open Data Tools</strong>. The sidebar walks through four steps, plus optional automation.</p>
+  <h2 id="addon">Google Sheets add-on</h2>
+
+  <h3>Install</h3>
+  <p>Installed from the Google Workspace Marketplace directly into Google Sheets. Once installed, open its tools from the <strong>Extensions</strong> menu in any Google Sheet:</p>
+  <ul>
+    <li><strong>Extensions → CopydoWell → 1. Copy Tool</strong> — copy, sort, filter, and automation</li>
+    <li><strong>Extensions → CopydoWell → 2. Mail merge</strong> — bulk personalized email</li>
+  </ul>
+
+  <h3>Copy Tool</h3>
+  <p>The sidebar walks through four steps, plus optional automation.</p>
 
   <div class="step">
-    <h3>1. Destination</h3>
-    <p>Pick a sheet in the spreadsheet you currently have open — this is where the data will land. You can use an existing sheet or create a new one. Choose <strong>Overwrite</strong> to replace its contents each time, or <strong>Append</strong> to add rows below what's already there. "Include header row" controls whether the column headers are copied along with the data.</p>
+    <h4>1. Destination</h4>
+    <p>Pick a sheet in the spreadsheet you currently have open — this is where the data will land. Use an existing sheet or create a new one. Choose <strong>Overwrite</strong> to replace its contents each time, or <strong>Append</strong> to add rows below what's already there. "Include header row" controls whether column headers are copied along with the data, and "Apply clean formatting" bolds the header, freezes it, auto-resizes columns, and applies row banding.</p>
   </div>
 
   <div class="step">
-    <h3>2. Source</h3>
+    <h4>2. Source</h4>
     <p>Paste the URL (or ID) of the spreadsheet you want to pull data <em>from</em>, then click <strong>Load source</strong>. Once connected, pick which sheet within that spreadsheet to read.</p>
   </div>
 
   <div class="step">
-    <h3>3. Sort</h3>
+    <h4>3. Sort</h4>
     <p>Optionally choose a column from the source sheet to sort by, ascending or descending.</p>
   </div>
 
   <div class="step">
-    <h3>4. Filter</h3>
+    <h4>4. Filter</h4>
     <p>Add one or more conditions (column, operator, value) — for example "Status equals Active." All conditions must match for a row to be included (AND logic). Available operators: equals, not equals, contains, does not contain, greater than, less than, greater or equal, less or equal, is empty, is not empty.</p>
   </div>
 
   <p>Click <strong>Run now</strong> to perform the copy immediately.</p>
 
-  <h2 id="automation">Automation</h2>
+  <h3>Automation</h3>
   <p>Below Run now, three toggles let a saved job run on its own:</p>
   <ul>
     <li><strong>Run automatically when the source sheet is edited</strong> — re-runs the job whenever the source sheet changes.</li>
@@ -89,39 +92,48 @@
   </ul>
   <p>Turning on any toggle saves your current Destination/Source/Sort/Filter settings as "the job" and creates the matching trigger. Turn a toggle off at any time to remove that automation.</p>
 
-  <h2 id="mail-merge">Using Mail Merge</h2>
-  <p>Open <strong>Extensions → CopydoWell → Mail Merge</strong>. This tool reads a sheet in your current spreadsheet and sends one email per matching row.</p>
+  <h3>Mail merge (add-on)</h3>
+  <p>Open <strong>Extensions → CopydoWell → 2. Mail merge</strong>. This tool reads a sheet in your current spreadsheet and sends one email per matching row.</p>
+  <ul>
+    <li>Pick the sheet with your recipient list and the column containing each recipient's email address.</li>
+    <li>Write a subject and message. Use <code>{{ColumnName}}</code> anywhere to insert that row's value — for example: <code>Hi {{First Name}}, your order {{Order ID}} has shipped.</code></li>
+    <li>Check <strong>Send as HTML</strong> to write formatted messages using HTML tags directly, including images from a publicly-hosted image URL column with <code>&lt;img src="{{ColumnName}}"&gt;</code>.</li>
+    <li>Optionally add filter conditions (same rules as Copy Tool) so only some rows are emailed.</li>
+    <li>Use <strong>Preview count</strong> to see how many recipients match and how much of today's sending quota remains, <strong>Send test to myself</strong> to try it safely first, and <strong>Send now</strong> (with a confirmation showing the exact recipient count) to send for real.</li>
+  </ul>
+  <p>The add-on's Mail Merge does not support file attachments or a rich text editor — for those, use the Chrome extension's Mail Merge instead. Sending draws on your own Google account's daily email quota (enforced by Google, not CopydoWell).</p>
 
-  <div class="step">
-    <h3>Sheet &amp; email column</h3>
-    <p>Pick the sheet with your recipient list, then pick which column contains each recipient's email address.</p>
-  </div>
+  <h2 id="extension">Chrome extension</h2>
 
-  <div class="step">
-    <h3>Subject &amp; message</h3>
-    <p>Write your subject and message. Use <code>{{ColumnName}}</code> anywhere to insert that row's value — for example: <code>Hi {{First Name}}, your order {{Order ID}} has shipped.</code></p>
-    <p>Check <strong>Send as HTML</strong> to write formatted messages (bold, links, images). With HTML enabled, you can also insert a picture pulled directly from a Google Drive link stored in a column, using <code>{{image:ColumnName}}</code> — for example <code>{{image:Photo Link}}</code>, where the "Photo Link" column holds a Drive share link for each row's image.</p>
-  </div>
+  <h3>Install</h3>
+  <p>Installed from the Chrome Web Store. Once installed, open the side panel on any Google Sheet (click the CopydoWell toolbar icon). The panel has three tabs: <strong>Copy Tool</strong>, <strong>Mail Merge</strong>, and <strong>Triggers</strong>.</p>
 
-  <div class="step">
-    <h3>Attachments</h3>
-    <p>Choose one of:</p>
-    <ul>
-      <li><strong>None</strong> — no attachment.</li>
-      <li><strong>Same file for everyone</strong> — paste a single Drive file link/ID; it's attached to every email.</li>
-      <li><strong>From a column</strong> — pick a column containing a Drive file link per row, so each recipient gets their own file (e.g. a personalized invoice or certificate). Separate multiple links in one cell with commas to attach more than one file per row.</li>
-    </ul>
-  </div>
+  <h3>Copy Tool</h3>
+  <p>Works like the add-on's Copy Tool, with one addition: after picking which columns to copy, you can use the <strong>↑ / ↓</strong> buttons next to each selected column to set the destination's column order — it doesn't have to match the source sheet's order.</p>
 
-  <div class="step">
-    <h3>Filter, preview, and send</h3>
-    <p>Optionally add filter conditions so only some rows are emailed (same rules as Data Tools). Use <strong>Preview count</strong> to see how many recipients currently match and how much of today's sending quota remains, and <strong>Send test to myself</strong> to send one real email — using the first matching row's data — to your own address before sending to everyone. <strong>Send now</strong> asks for confirmation showing the exact number of recipients before it sends anything.</p>
-  </div>
+  <h3>Triggers</h3>
+  <p>The extension supports <strong>multiple, independent scheduled jobs</strong> at once, each with its own source, destination, and schedule:</p>
+  <ul>
+    <li>From the Copy Tool tab's Automation section, name a trigger, set a schedule (every N minutes/hours, or daily at an hour), and click <strong>Add trigger</strong>.</li>
+    <li>Switch to the <strong>Triggers</strong> tab to see every trigger you've saved — its name, schedule, source, destination, and next run time.</li>
+    <li>Each trigger card has <strong>Edit</strong> (reloads its exact settings into the Copy Tool tab so you can adjust and save changes) and <strong>Delete</strong> (removes it and cancels its schedule) buttons.</li>
+  </ul>
+  <p>Unlike the add-on, the extension can't react to edits or form submissions directly (a browser extension has no way to be notified the instant a Sheet changes) — only scheduled runs are supported. A trigger only runs while Chrome is open and you remain signed in; if a run fails, you'll get a Chrome notification.</p>
 
-  <p>Mail Merge sends via your own Google account's daily email quota (Google enforces this limit, not CopydoWell), so very large lists may need to be sent across more than one day.</p>
+  <h3>Mail Merge (extension)</h3>
+  <p>Pick a sheet and email column, write a subject and message, and send one email per matching row — with more formatting options than the add-on:</p>
+  <ul>
+    <li><strong>Rich text toolbar</strong> — Bold, Italic, a text color picker, and Clear formatting, right above the message box.</li>
+    <li><strong>Paste as HTML or Plain text</strong> — choose whether pasted content keeps its source formatting or comes in as bare text.</li>
+    <li><strong>Attachments</strong> — attach the same file to every email, or a different file per row from a column of links. Files must be shared as "Anyone with the link can view"; private files can't be fetched this way.</li>
+    <li>The same filter conditions, Preview count, Send test to myself, and confirmed Send now as the add-on.</li>
+  </ul>
+
+  <h3>Pricing</h3>
+  <p>The Chrome extension is free to try: <strong>Run now</strong> and <strong>Send now</strong> work for your first 5 uses combined, no strings attached. After that, a one-time <strong>$1 purchase</strong> unlocks both, forever — no subscription, no recurring charge. Payments are processed by <a href="https://extensionpay.com">ExtensionPay</a> via Stripe; CopydoWell never sees or stores your payment details directly. See the <a href="terms.html">Terms of Service</a> for the refund policy.</p>
 
   <h2 id="support">Support</h2>
-  <p>Questions or issues: <a href="mailto:support@metalix.in">support@metalix.in</a></p>
+  <p>Questions or issues, for either product: <a href="mailto:support@metalix.in">support@metalix.in</a></p>
 </main>
 
 <footer>

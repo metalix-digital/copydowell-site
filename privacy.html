@@ -23,46 +23,68 @@
 </nav>
 
 <main>
-  <p class="updated"><strong>Last updated:</strong> July 15, 2026</p>
+  <p class="updated"><strong>Last updated:</strong> July 16, 2026</p>
 
-  <p>CopydoWell ("the Add-on") is provided by Metalix ("we", "us", "our"). This policy explains what data the Add-on accesses within Google Workspace and how it is used.</p>
+  <p>CopydoWell is provided by Metalix ("we", "us", "our") as two related products: a Google Sheets add-on and a companion Chrome extension. This policy covers both — sections are marked where they apply to only one.</p>
 
-  <h2>What the Add-on accesses</h2>
-  <p>When you install and use CopydoWell, it requests the following Google OAuth scope:</p>
+  <h2>Google Sheets add-on</h2>
+
+  <h3>What it accesses</h3>
+  <p>The add-on requests these Google OAuth scopes:</p>
   <ul>
-    <li><strong><code>https://www.googleapis.com/auth/spreadsheets</code></strong> — read and write access to Google Sheets that you open the Add-on in, or that you explicitly point it to (via a spreadsheet URL/ID you enter into the sidebar).</li>
-  </ul>
-  <p>The Add-on also uses:</p>
-  <ul>
+    <li><strong><code>https://www.googleapis.com/auth/spreadsheets</code></strong> — read and write access to Google Sheets you open the add-on in, or that you explicitly point it to (via a spreadsheet URL/ID you enter into the sidebar).</li>
     <li><strong><code>https://www.googleapis.com/auth/script.container.ui</code></strong> — to display its sidebar and menu inside Google Sheets.</li>
+    <li><strong><code>https://www.googleapis.com/auth/script.scriptapp</code></strong> — to create, list, and remove the installable triggers that power the optional Automation feature (run on edit, on form submission, or on a schedule), only when you explicitly enable it.</li>
+    <li><strong><code>https://www.googleapis.com/auth/script.send_mail</code></strong> — used by Mail Merge to send email as you, only when you click "Send now" or "Send test to myself."</li>
   </ul>
 
-  <h2>How your data is used</h2>
+  <h3>How it's used</h3>
   <ul>
-    <li>All spreadsheet data the Add-on reads and writes is processed entirely within Google's Apps Script infrastructure, running under your own Google account's authorization.</li>
-    <li>The Add-on copies, sorts, and filters rows between sheets/spreadsheets only at your explicit request, or according to automation (edit-triggered, form-triggered, or scheduled) that you personally configure and can disable at any time.</li>
-    <li>Automation settings you save (source sheet, destination spreadsheet, sort/filter rules) are stored using Google Apps Script's Document Properties service, scoped to the specific spreadsheet you configured — this data stays inside your own Google Workspace environment.</li>
+    <li>All spreadsheet data is processed entirely within Google's Apps Script infrastructure, running under your own Google account's authorization.</li>
+    <li>Data is copied, sorted, and filtered, or mail merge emails are sent, only at your explicit request or via automation you personally configured and can disable at any time.</li>
+    <li>Automation settings (source sheet, destination spreadsheet, sort/filter rules) are stored using Apps Script's Document Properties service, scoped to the specific spreadsheet you configured — this stays inside your own Google Workspace environment.</li>
   </ul>
 
-  <h2>What we do not do</h2>
+  <h2>Chrome extension</h2>
+
+  <h3>What it accesses</h3>
+  <p>The extension requests:</p>
   <ul>
-    <li>We do not operate any external server that receives, stores, or logs your spreadsheet data.</li>
-    <li>We do not sell, rent, or share your data with third parties.</li>
+    <li><strong><code>https://www.googleapis.com/auth/spreadsheets</code></strong> — same purpose as above, via the Sheets API directly.</li>
+    <li><strong><code>https://www.googleapis.com/auth/gmail.send</code></strong> — used by Mail Merge to send email via the Gmail API on your behalf, only when you click "Send now" or "Send test to myself." This is a send-only scope; the extension cannot read your Gmail messages.</li>
+  </ul>
+  <p>It also uses these browser permissions:</p>
+  <ul>
+    <li><strong>identity</strong> — to sign you into Google and to look up your signed-in email for "Send test to myself" (via Chrome's own profile info, not a Google API call).</li>
+    <li><strong>storage</strong> — to save your configured triggers (source, destination, filters, schedule) locally in your browser.</li>
+    <li><strong>alarms</strong> — to run your scheduled triggers at the times you set.</li>
+    <li><strong>notifications</strong> — to alert you if a scheduled trigger fails.</li>
+    <li>Read-only access to the active tab's URL on <code>docs.google.com</code> — only to detect which spreadsheet is open, so the destination is set automatically.</li>
+    <li>Access to <code>drive.google.com</code> — only to download attachment/image files you link from Google Drive for Mail Merge, and only files shared as "Anyone with the link can view." No Drive API or broader Drive access is used.</li>
+  </ul>
+
+  <h3>Payments</h3>
+  <p>The Chrome extension's one-time $1 purchase is processed by <a href="https://extensionpay.com">ExtensionPay</a>, using Stripe as the payment processor. When you purchase, your payment details (card number, billing address, etc.) are handled directly by Stripe and ExtensionPay — CopydoWell and Metalix never receive, see, or store your payment card information. We only receive confirmation of whether you've paid, via ExtensionPay's API. See <a href="https://www.extensionpay.com/privacy">ExtensionPay's privacy policy</a> and <a href="https://stripe.com/privacy">Stripe's privacy policy</a> for how they handle payment data.</p>
+
+  <h2>What we do not do (both products)</h2>
+  <ul>
+    <li>We do not operate any backend server that receives, stores, or logs your spreadsheet or email data.</li>
+    <li>We do not sell, rent, or share your data with third parties, beyond the payment processing described above.</li>
     <li>We do not use your data for advertising or profiling.</li>
-    <li>We do not access spreadsheets you have not explicitly opened the Add-on in or provided a link/ID for.</li>
+    <li>We do not access spreadsheets you have not explicitly opened the product in or provided a link/ID for.</li>
   </ul>
 
   <h2>Data retention</h2>
-  <p>Because the Add-on does not transmit data to any external server, there is no off-Google copy of your data for us to retain. Automation configuration stored via Document Properties persists until you remove the Add-on or clear it yourself, and lives inside your own Google account.</p>
+  <p>Neither product transmits your spreadsheet or email data to any server we operate, so there is no off-Google, off-browser copy for us to retain. Add-on automation settings live in Apps Script's Document Properties inside your Google account; extension triggers live in your browser's local storage. Both persist until you remove the product or clear them yourself.</p>
 
   <h2>Your choices</h2>
-  <p>You can revoke the Add-on's access at any time via your <a href="https://myaccount.google.com/permissions">Google Account permissions page</a>. Uninstalling the Add-on removes its menu, sidebar, and any triggers it created.</p>
+  <p>You can revoke either product's Google access at any time via your <a href="https://myaccount.google.com/permissions">Google Account permissions page</a>. Uninstalling removes its menus/sidebar/side panel and any triggers it created.</p>
 
   <h2>Changes to this policy</h2>
-  <p>We may update this policy as the Add-on evolves. Material changes will be reflected by updating the "Last updated" date above.</p>
+  <p>We may update this policy as either product evolves. Material changes will be reflected by updating the "Last updated" date above.</p>
 
   <h2>Contact</h2>
-  <p>Questions about this policy or the Add-on's data practices can be sent to <a href="mailto:support@metalix.in">support@metalix.in</a>.</p>
+  <p>Questions about this policy or either product's data practices can be sent to <a href="mailto:support@metalix.in">support@metalix.in</a>.</p>
 </main>
 
 <footer>
