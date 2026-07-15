@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CopydoWell — Copy, sort, and filter data between Google Sheets</title>
-<meta name="description" content="CopydoWell is a Google Sheets add-on by Metalix that copies, sorts, and filters data between spreadsheets, manually or automatically.">
+<meta name="description" content="CopydoWell is a Google Sheets add-on by Metalix that copies, sorts, and filters data between spreadsheets, and sends mail merge emails with attachments and images, manually or automatically.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
   <div class="wrap">
     <h1>CopydoWell</h1>
-    <p>Copy, sort, and filter data between Google Sheets — manually or automatically.</p>
+    <p>Copy, sort, and filter data between Google Sheets — plus mail merge with attachments and images. Manually or automatically.</p>
   </div>
 </header>
 
@@ -24,21 +24,103 @@
 </nav>
 
 <main>
-  <h2>What it does</h2>
+  <div class="toc">
+    <p>On this page</p>
+    <ul>
+      <li><a href="#what-it-does">What it does</a></li>
+      <li><a href="#install">Install</a></li>
+      <li><a href="#data-tools">Using Data Tools (copy, sort, filter)</a></li>
+      <li><a href="#automation">Automation</a></li>
+      <li><a href="#mail-merge">Using Mail Merge</a></li>
+      <li><a href="#support">Support</a></li>
+    </ul>
+  </div>
+
+  <h2 id="what-it-does">What it does</h2>
   <ul>
     <li><strong>Pull data across spreadsheets</strong> — connect any source spreadsheet by URL and bring its data into a sheet you choose, into an existing tab or a new one.</li>
     <li><strong>Filter before it lands</strong> — combine multiple conditions (equals, contains, greater/less than, is empty, and more) that must all match, so only the rows you need come through.</li>
     <li><strong>Sort automatically</strong> — pick any column to sort by, ascending or descending, applied as part of the same operation.</li>
     <li><strong>Automate it</strong> — set CopydoWell to run on its own: whenever the source sheet is edited, whenever a linked Google Form is submitted, or on a recurring schedule.</li>
+    <li><strong>Mail merge</strong> — send a personalized email to every matching row in a sheet, with dynamic attachments and inline images pulled from Google Drive.</li>
   </ul>
 
-  <h2>Who it's for</h2>
-  <p>Teams who regularly consolidate, clean, or route data between Google Sheets — without writing formulas or scripts themselves. CopydoWell adds a simple sidebar inside Google Sheets that anyone in an organization can use.</p>
+  <h3>Who it's for</h3>
+  <p>Teams who regularly consolidate, clean, or route data between Google Sheets, or send bulk personalized emails from spreadsheet data — without writing formulas or scripts themselves. CopydoWell adds simple sidebars inside Google Sheets that anyone in an organization can use.</p>
 
-  <h2>Install</h2>
-  <p>CopydoWell is installed from the Google Workspace Marketplace directly into Google Sheets. Once installed, open it from <strong>Extensions → CopydoWell → Open Data Tools</strong>.</p>
+  <h2 id="install">Install</h2>
+  <p>CopydoWell is installed from the Google Workspace Marketplace directly into Google Sheets. Once installed, open its tools from the <strong>Extensions</strong> menu in any Google Sheet:</p>
+  <ul>
+    <li><strong>Extensions → CopydoWell → Open Data Tools</strong> — copy, sort, filter, and automation</li>
+    <li><strong>Extensions → CopydoWell → Mail Merge</strong> — bulk personalized email</li>
+  </ul>
 
-  <h2>Support</h2>
+  <h2 id="data-tools">Using Data Tools (copy, sort, filter)</h2>
+  <p>Open <strong>Extensions → CopydoWell → Open Data Tools</strong>. The sidebar walks through four steps, plus optional automation.</p>
+
+  <div class="step">
+    <h3>1. Destination</h3>
+    <p>Pick a sheet in the spreadsheet you currently have open — this is where the data will land. You can use an existing sheet or create a new one. Choose <strong>Overwrite</strong> to replace its contents each time, or <strong>Append</strong> to add rows below what's already there. "Include header row" controls whether the column headers are copied along with the data.</p>
+  </div>
+
+  <div class="step">
+    <h3>2. Source</h3>
+    <p>Paste the URL (or ID) of the spreadsheet you want to pull data <em>from</em>, then click <strong>Load source</strong>. Once connected, pick which sheet within that spreadsheet to read.</p>
+  </div>
+
+  <div class="step">
+    <h3>3. Sort</h3>
+    <p>Optionally choose a column from the source sheet to sort by, ascending or descending.</p>
+  </div>
+
+  <div class="step">
+    <h3>4. Filter</h3>
+    <p>Add one or more conditions (column, operator, value) — for example "Status equals Active." All conditions must match for a row to be included (AND logic). Available operators: equals, not equals, contains, does not contain, greater than, less than, greater or equal, less or equal, is empty, is not empty.</p>
+  </div>
+
+  <p>Click <strong>Run now</strong> to perform the copy immediately.</p>
+
+  <h2 id="automation">Automation</h2>
+  <p>Below Run now, three toggles let a saved job run on its own:</p>
+  <ul>
+    <li><strong>Run automatically when the source sheet is edited</strong> — re-runs the job whenever the source sheet changes.</li>
+    <li><strong>Run automatically when the linked form is submitted</strong> — re-runs the job whenever the source spreadsheet's linked Google Form receives a new response.</li>
+    <li><strong>Run on a schedule</strong> — every N minutes, every N hours, or daily at a chosen hour.</li>
+  </ul>
+  <p>Turning on any toggle saves your current Destination/Source/Sort/Filter settings as "the job" and creates the matching trigger. Turn a toggle off at any time to remove that automation.</p>
+
+  <h2 id="mail-merge">Using Mail Merge</h2>
+  <p>Open <strong>Extensions → CopydoWell → Mail Merge</strong>. This tool reads a sheet in your current spreadsheet and sends one email per matching row.</p>
+
+  <div class="step">
+    <h3>Sheet &amp; email column</h3>
+    <p>Pick the sheet with your recipient list, then pick which column contains each recipient's email address.</p>
+  </div>
+
+  <div class="step">
+    <h3>Subject &amp; message</h3>
+    <p>Write your subject and message. Use <code>{{ColumnName}}</code> anywhere to insert that row's value — for example: <code>Hi {{First Name}}, your order {{Order ID}} has shipped.</code></p>
+    <p>Check <strong>Send as HTML</strong> to write formatted messages (bold, links, images). With HTML enabled, you can also insert a picture pulled directly from a Google Drive link stored in a column, using <code>{{image:ColumnName}}</code> — for example <code>{{image:Photo Link}}</code>, where the "Photo Link" column holds a Drive share link for each row's image.</p>
+  </div>
+
+  <div class="step">
+    <h3>Attachments</h3>
+    <p>Choose one of:</p>
+    <ul>
+      <li><strong>None</strong> — no attachment.</li>
+      <li><strong>Same file for everyone</strong> — paste a single Drive file link/ID; it's attached to every email.</li>
+      <li><strong>From a column</strong> — pick a column containing a Drive file link per row, so each recipient gets their own file (e.g. a personalized invoice or certificate). Separate multiple links in one cell with commas to attach more than one file per row.</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>Filter, preview, and send</h3>
+    <p>Optionally add filter conditions so only some rows are emailed (same rules as Data Tools). Use <strong>Preview count</strong> to see how many recipients currently match and how much of today's sending quota remains, and <strong>Send test to myself</strong> to send one real email — using the first matching row's data — to your own address before sending to everyone. <strong>Send now</strong> asks for confirmation showing the exact number of recipients before it sends anything.</p>
+  </div>
+
+  <p>Mail Merge sends via your own Google account's daily email quota (Google enforces this limit, not CopydoWell), so very large lists may need to be sent across more than one day.</p>
+
+  <h2 id="support">Support</h2>
   <p>Questions or issues: <a href="mailto:support@metalix.in">support@metalix.in</a></p>
 </main>
 

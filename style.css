@@ -71,9 +71,41 @@ h2 {
 
 h2:first-child { margin-top: 0; }
 
-ul { padding-left: 20px; }
+h3 {
+  font-size: 16px;
+  margin-top: 24px;
+  margin-bottom: 6px;
+}
+
+ol, ul { padding-left: 20px; }
 
 a { color: #1a73e8; }
+
+code {
+  background: #f1f3f4;
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 12.5px;
+  font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+}
+
+.toc {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.toc p { margin: 0 0 8px; font-weight: 600; }
+.toc ul { margin: 0; padding-left: 18px; }
+.toc li { margin-bottom: 4px; }
+
+.step {
+  border-left: 3px solid #1a73e8;
+  padding-left: 14px;
+  margin: 14px 0;
+}
 
 footer {
   text-align: center;
