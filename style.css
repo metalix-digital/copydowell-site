@@ -129,26 +129,37 @@ footer {
 .cta {
   display: inline-block;
   margin-top: 20px;
-  padding: 12px 24px;
+  padding: 13px 30px;
   background: #fff;
   color: #174ea6;
-  border-radius: 8px;
+  border-radius: 999px;
   font-weight: 600;
   font-size: 15px;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.20);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, filter 0.15s ease;
 }
 
-.cta:hover { background: #f1f3f4; text-decoration: none; }
+.cta:hover {
+  background: #f1f3f4;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 9px 24px rgba(0,0,0,0.28);
+}
 
 .cta.inline {
-  background: #1a73e8;
+  background: linear-gradient(135deg, #1a73e8, #174ea6);
   color: #fff;
   margin-top: 8px;
-  box-shadow: none;
+  box-shadow: 0 4px 14px rgba(26,115,232,0.35);
 }
 
-.cta.inline:hover { background: #174ea6; }
+.cta.inline:hover {
+  background: linear-gradient(135deg, #1a73e8, #174ea6);
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 24px rgba(26,115,232,0.45);
+}
 
 .cta.donate {
   background: linear-gradient(135deg, #ff5f6d, #ff2d55);
@@ -213,3 +224,39 @@ footer {
 .cookie-consent .cc-accept:hover { background: #4285f4; }
 .cookie-consent .cc-decline { background: transparent; color: #f1f3f4; border: 1px solid #5f6368; }
 .cookie-consent .cc-decline:hover { background: rgba(255,255,255,0.08); }
+.cookie-consent em { color: #9aa0a6; font-style: normal; }
+
+.manage-cookies { cursor: pointer; }
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin: 18px 0 8px;
+}
+
+.shots figure { margin: 0; }
+
+.shots img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.shots figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #5f6368;
+  text-align: center;
+}
+
+.marquee-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  margin: 8px 0 4px;
+}
