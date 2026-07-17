@@ -125,3 +125,27 @@ footer {
   font-size: 13px;
   color: #5f6368;
 }
+
+.cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #fff;
+  color: #174ea6;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.cta:hover { background: #f1f3f4; text-decoration: none; }
+
+.cta.inline {
+  background: #1a73e8;
+  color: #fff;
+  margin-top: 8px;
+  box-shadow: none;
+}
+
+.cta.inline:hover { background: #174ea6; }
