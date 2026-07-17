@@ -155,7 +155,8 @@
   <p>The extension supports <strong>multiple, independent scheduled jobs</strong> at once, each with its own source, destination, and schedule:</p>
   <ul>
     <li>From the Copy Tool tab's Automation section, name a trigger, set a schedule (every N minutes/hours, or daily at an hour), and click <strong>Add trigger</strong>.</li>
-    <li>Switch to the <strong>Triggers</strong> tab to see every trigger you've saved — its name, schedule, source, destination, and next run time.</li>
+    <li><strong>Only run if the source changed</strong> — an optional switch so a scheduled job skips itself when the source sheet hasn't changed since its last run, avoiding redundant copies.</li>
+    <li>Switch to the <strong>Triggers</strong> tab to see every trigger you've saved — its name, schedule, source, destination, next run time, and a <strong>run history</strong>: the last run's status (success, skipped, or failed), when it ran, and how many rows it copied.</li>
     <li>Each trigger card has <strong>Edit</strong> (reloads its exact settings into the Copy Tool tab so you can adjust and save changes) and <strong>Delete</strong> (removes it and cancels its schedule) buttons.</li>
   </ul>
   <p>Unlike the add-on, the extension can't react to edits or form submissions directly (a browser extension has no way to be notified the instant a Sheet changes) — only scheduled runs are supported. A trigger only runs while Chrome is open and you remain signed in; if a run fails, you'll get a Chrome notification.</p>
