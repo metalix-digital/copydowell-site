@@ -20,15 +20,15 @@
   <div class="wrap">
     <h1>CopydoWell</h1>
     <p>Copy, sort, filter, and mail merge data between Google Sheets — as a Sheets add-on or a Chrome extension.</p>
-    <a class="cta" href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener">Add to Chrome — it's free</a>
+    <a class="cta" href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="hero">Add to Chrome — it's free</a>
   </div>
 </header>
 
 <nav>
   <div class="wrap">
     <a href="index.html">Home</a>
-    <a href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener">Add to Chrome</a>
-    <a href="donate.html">Donate</a>
+    <a href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="nav">Add to Chrome</a>
+    <a href="donate.html" data-ga-event="donate_click" data-ga-label="nav">Donate</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms of Service</a>
   </div>
@@ -118,7 +118,7 @@
 
   <h3>Install</h3>
   <p>Installed from the Chrome Web Store. Once installed, open the side panel on any Google Sheet (click the CopydoWell toolbar icon). The panel has three tabs: <strong>Copy Tool</strong>, <strong>Mail Merge</strong>, and <strong>Triggers</strong>.</p>
-  <p><a class="cta inline" href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener">Add to Chrome</a></p>
+  <p><a class="cta inline" href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="install_section">Add to Chrome</a></p>
 
   <h3>Copy Tool</h3>
   <p>Works like the add-on's Copy Tool, with one addition: after picking which columns to copy, you can use the <strong>↑ / ↓</strong> buttons next to each selected column to set the destination's column order — it doesn't have to match the source sheet's order.</p>
@@ -142,7 +142,7 @@
   </ul>
 
   <h3>Pricing</h3>
-  <p>The Chrome extension is <strong>free</strong> — every feature, including automation, mail merge, and attachments, with no purchase required. If it saves you time, donations are welcome and help keep the project running: <a href="donate.html">support CopydoWell</a>. See the <a href="terms.html">Terms of Service</a> for details.</p>
+  <p>The Chrome extension is <strong>free</strong> — every feature, including automation, mail merge, and attachments, with no purchase required. If it saves you time, donations are welcome and help keep the project running: <a href="donate.html" data-ga-event="donate_click" data-ga-label="pricing">support CopydoWell</a>. See the <a href="terms.html">Terms of Service</a> for details.</p>
 
   <h2 id="support">Support</h2>
   <p>Questions or issues, for either product: <a href="mailto:support@metalix.in">support@metalix.in</a></p>
@@ -151,5 +151,16 @@
 <footer>
   &copy; 2026 Metalix &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a>
 </footer>
+<script>
+  // Track key CTA clicks (Add to Chrome / Donate) as GA4 events.
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-ga-event]');
+    if (!el || typeof gtag !== 'function') return;
+    gtag('event', el.getAttribute('data-ga-event'), {
+      cta_location: el.getAttribute('data-ga-label') || '',
+      link_url: el.getAttribute('href') || ''
+    });
+  });
+</script>
 </body>
 </html>

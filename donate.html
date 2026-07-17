@@ -37,7 +37,7 @@
 
   <p>Contribute any amount securely via Razorpay — UPI, cards, net banking, and wallets are all supported.</p>
 
-  <p><a class="cta inline" href="https://razorpay.me/@aaquibrazahasan" target="_blank" rel="noopener">Donate via Razorpay</a></p>
+  <p><a class="cta inline" href="https://razorpay.me/@aaquibrazahasan" target="_blank" rel="noopener" data-ga-event="donate_click" data-ga-label="razorpay_button">Donate via Razorpay</a></p>
 
   <p class="updated">Contributions are voluntary and non-refundable. CopydoWell
   remains fully functional whether or not you donate.</p>
@@ -48,5 +48,16 @@
     <p>&copy; 2026 Metalix — CopydoWell</p>
   </div>
 </footer>
+<script>
+  // Track key CTA clicks (Add to Chrome / Donate) as GA4 events.
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-ga-event]');
+    if (!el || typeof gtag !== 'function') return;
+    gtag('event', el.getAttribute('data-ga-event'), {
+      cta_location: el.getAttribute('data-ga-label') || '',
+      link_url: el.getAttribute('href') || ''
+    });
+  });
+</script>
 </body>
 </html>
