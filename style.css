@@ -150,6 +150,33 @@ footer {
 
 .cta.inline:hover { background: #174ea6; }
 
+.cta.donate {
+  background: linear-gradient(135deg, #ff5f6d, #ff2d55);
+  color: #fff;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(255, 45, 85, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.cta.donate:hover {
+  background: linear-gradient(135deg, #ff5f6d, #ff2d55);
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(255, 45, 85, 0.45);
+  text-decoration: none;
+}
+
+.cta.donate .heart { display: inline-block; animation: heartbeat 1.4s ease-in-out infinite; }
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.25); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.2); }
+}
+
 .cookie-consent {
   position: fixed;
   left: 0;
