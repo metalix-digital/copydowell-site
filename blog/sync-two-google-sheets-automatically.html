@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Sync Two Google Sheets Automatically (No IMPORTRANGE) | CopydoWell</title>
+<meta name="description" content="Keep one Google Sheet in sync with another automatically — on a schedule, without IMPORTRANGE or writing Apps Script. Set up scheduled triggers that copy, sort, and filter your data for you.">
+<link rel="canonical" href="https://copydowell.metalix.in/blog/sync-two-google-sheets-automatically.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Sync Two Google Sheets Automatically (No IMPORTRANGE)">
+<meta property="og:description" content="Keep one Google Sheet in sync with another automatically, on a schedule — without IMPORTRANGE or Apps Script.">
+<meta property="og:url" content="https://copydowell.metalix.in/blog/sync-two-google-sheets-automatically.html">
+<meta property="og:image" content="https://copydowell.metalix.in/images/marquee-1400x560.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog/blog.css">
+<!-- Google Analytics (GA4) with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-570SE982X2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500
+  });
+  try { if (localStorage.getItem('cdw_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}
+  gtag('js', new Date());
+  gtag('config', 'G-570SE982X2');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Sync Two Google Sheets Automatically (No IMPORTRANGE)",
+  "description": "Keep one Google Sheet in sync with another automatically, on a schedule, without IMPORTRANGE or writing Apps Script.",
+  "image": "https://copydowell.metalix.in/images/marquee-1400x560.png",
+  "author": { "@type": "Organization", "name": "Metalix" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CopydoWell",
+    "logo": { "@type": "ImageObject", "url": "https://copydowell.metalix.in/images/marquee-1400x560.png" }
+  },
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-18",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://copydowell.metalix.in/blog/sync-two-google-sheets-automatically.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://copydowell.metalix.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://copydowell.metalix.in/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Sync two Google Sheets automatically", "item": "https://copydowell.metalix.in/blog/sync-two-google-sheets-automatically.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I automatically sync data from one Google Sheet to another?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Set up a copy in CopydoWell — choose the destination sheet, the source spreadsheet, and any columns, sort, and filter you want — then save it as a scheduled trigger that runs every few minutes, hourly, or daily. Each run copies fresh data automatically, with no IMPORTRANGE formula and no code." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I sync Google Sheets without IMPORTRANGE?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Instead of a live IMPORTRANGE formula, a scheduled copy tool like CopydoWell writes a real, independent copy of the data on a schedule. It won't break when the source is renamed or re-shared, and you can pick columns, sort, and filter along the way." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the sync run when my computer is off?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The CopydoWell Chrome extension's scheduled triggers run while Chrome is open and you're signed in. If you need syncs to run even with your machine off — or to fire the instant a sheet is edited or a form is submitted — use the CopydoWell Google Sheets add-on, whose triggers run on Google's servers." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>CopydoWell Blog</h1>
+    <p>Practical guides for moving data between Google Sheets — without the formula headaches.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="/index.html">Home</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="nav">Add to Chrome</a>
+    <a href="/donate.html">Donate</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+  </div>
+</nav>
+
+<main>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/index.html">Home</a> › <a href="/blog/">Blog</a> › Sync two Google Sheets automatically
+  </nav>
+
+  <article>
+    <h1>How to sync two Google Sheets automatically (no IMPORTRANGE)</h1>
+    <p class="post-meta">By Metalix · July 18, 2026 · 5 min read</p>
+
+    <p class="lead">You want the numbers in one sheet to keep matching another — a team's data flowing into a master, form responses into a clean report — without copying and pasting every morning. Here are your real options, and the simplest way to set a hands-off sync on a schedule.</p>
+
+    <h2>Three ways to sync Google Sheets</h2>
+    <ul>
+      <li><strong>IMPORTRANGE</strong> — a live formula link. Always current, but it only mirrors the raw range, and it <a href="/blog/importrange-alternative-google-sheets.html">breaks in the usual ways</a> (permissions, renames, #REF!).</li>
+      <li><strong>Apps Script</strong> — write your own timed trigger. Powerful, but it's code to build and maintain, and most people don't want that.</li>
+      <li><strong>A scheduled copy tool</strong> — set up the copy once and let it re-run itself. You get a clean, independent copy each time, shaped exactly how you want.</li>
+    </ul>
+    <p>The third option is what <a href="/index.html">CopydoWell</a> does, from a side panel next to your sheet — no code.</p>
+
+    <h2>Set up an automatic sync with CopydoWell</h2>
+    <ol>
+      <li><strong>Build the copy.</strong> In the Copy Tool, choose the destination sheet, paste the source spreadsheet, and set which columns to bring across, plus any sort and filter. Run it once to confirm it does what you expect.</li>
+      <li><strong>Name a trigger.</strong> In the Automation section, give it a clear name like "Daily sales sync."</li>
+      <li><strong>Pick a schedule.</strong> Every N minutes, every N hours, or daily at a set hour.</li>
+      <li><strong>(Optional) Only run if the source changed.</strong> Turn this on so a scheduled run skips itself when nothing in the source has changed — no redundant copies.</li>
+      <li><strong>Add trigger.</strong> It now runs on its own on that schedule.</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>Multiple independent syncs.</strong> You can save as many triggers as you like — each with its own source, destination, and schedule — and manage them all from the <strong>Triggers</strong> tab, which shows every job's schedule, source, destination, next run time, and a run history (success, skipped, or failed, with row counts). Edit or delete any of them in a click.</p>
+    </div>
+
+    <h2>An honest limitation — and how to get around it</h2>
+    <p>A browser extension can only act while the browser is running. So CopydoWell's extension triggers run <strong>while Chrome is open and you're signed in</strong>; if a run ever fails, you get a Chrome notification. For a machine that's on during the workday, that's usually all you need.</p>
+    <p>But if you need syncs to run with your computer <em>off</em>, or to fire the moment a sheet is <strong>edited</strong> or a linked <strong>Google Form</strong> is submitted, use the <strong>CopydoWell Google Sheets add-on</strong> instead. Its triggers run on Google's own servers, so they fire on schedule, on edit, or on form submit — no browser required. Many people use both: the extension for its rich mail merge and column reordering, the add-on for server-side automation.</p>
+
+    <h2>Which sync method should you use?</h2>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th>&nbsp;</th><th>IMPORTRANGE</th><th>CopydoWell extension</th><th>CopydoWell add-on</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Produces a real copy</th><td class="no">No (live link)</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+          <tr><th>Pick columns / sort / filter</th><td>Needs formulas</td><td class="yes">Built in</td><td class="yes">Built in</td></tr>
+          <tr><th>Scheduled runs</th><td class="yes">Always live</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+          <tr><th>Runs with your PC off</th><td class="yes">Yes</td><td class="no">No</td><td class="yes">Yes</td></tr>
+          <tr><th>On-edit / on-form-submit</th><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td></tr>
+          <tr><th>Any code needed</th><td class="yes">No</td><td class="yes">No</td><td class="yes">No</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cta-box">
+      <h3>Put your sheet syncs on autopilot</h3>
+      <p>Copy, sort, filter, and schedule data between Google Sheets — free, no formulas, no code.</p>
+      <a class="cta" href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="sync_post">Add CopydoWell to Chrome — free</a>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>How do I automatically sync data from one Google Sheet to another?</summary>
+        <p>Set up a copy in CopydoWell — choose the destination sheet, the source spreadsheet, and any columns, sort, and filter you want — then save it as a scheduled trigger that runs every few minutes, hourly, or daily. Each run copies fresh data automatically, with no IMPORTRANGE formula and no code.</p>
+      </details>
+      <details>
+        <summary>Can I sync Google Sheets without IMPORTRANGE?</summary>
+        <p>Yes. Instead of a live IMPORTRANGE formula, a scheduled copy tool like CopydoWell writes a real, independent copy of the data on a schedule. It won't break when the source is renamed or re-shared, and you can pick columns, sort, and filter along the way.</p>
+      </details>
+      <details>
+        <summary>Does the sync run when my computer is off?</summary>
+        <p>The CopydoWell Chrome extension's scheduled triggers run while Chrome is open and you're signed in. If you need syncs to run even with your machine off — or to fire the instant a sheet is edited or a form is submitted — use the CopydoWell Google Sheets add-on, whose triggers run on Google's servers.</p>
+      </details>
+    </div>
+
+    <div class="related">
+      <h2>Related guides</h2>
+      <ul>
+        <li><a href="/blog/importrange-alternative-google-sheets.html">A simple IMPORTRANGE alternative for Google Sheets</a></li>
+        <li><a href="/blog/google-sheets-mail-merge-free.html">Free mail merge from Google Sheets (with attachments)</a></li>
+      </ul>
+    </div>
+  </article>
+</main>
+
+<footer>
+  &copy; 2026 Metalix &middot; <a href="/index.html">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Service</a> &middot; <a href="#" class="manage-cookies">Manage cookies</a>
+</footer>
+<script>
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-ga-event]');
+    if (!el || typeof gtag !== 'function') return;
+    gtag('event', el.getAttribute('data-ga-event'), {
+      cta_location: el.getAttribute('data-ga-label') || '',
+      link_url: el.getAttribute('href') || ''
+    });
+  });
+</script>
+<script src="/consent.js"></script>
+</body>
+</html>

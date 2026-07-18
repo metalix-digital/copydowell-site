@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Mail Merge from Google Sheets — With Attachments &amp; Rich Text | CopydoWell</title>
+<meta name="description" content="Send personalized bulk email from Google Sheets for free — including attachments and rich text formatting that most free mail merge tools charge for. Here's how, step by step.">
+<link rel="canonical" href="https://copydowell.metalix.in/blog/google-sheets-mail-merge-free.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Free Mail Merge from Google Sheets — With Attachments &amp; Rich Text">
+<meta property="og:description" content="Send personalized bulk email from Google Sheets for free — including attachments and rich text that most free tools paywall.">
+<meta property="og:url" content="https://copydowell.metalix.in/blog/google-sheets-mail-merge-free.html">
+<meta property="og:image" content="https://copydowell.metalix.in/images/marquee-1400x560.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog/blog.css">
+<!-- Google Analytics (GA4) with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-570SE982X2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500
+  });
+  try { if (localStorage.getItem('cdw_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}
+  gtag('js', new Date());
+  gtag('config', 'G-570SE982X2');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Free Mail Merge from Google Sheets — With Attachments & Rich Text",
+  "description": "Send personalized bulk email from Google Sheets for free, including attachments and rich text formatting that most free mail merge tools charge for.",
+  "image": "https://copydowell.metalix.in/images/marquee-1400x560.png",
+  "author": { "@type": "Organization", "name": "Metalix" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CopydoWell",
+    "logo": { "@type": "ImageObject", "url": "https://copydowell.metalix.in/images/marquee-1400x560.png" }
+  },
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-18",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://copydowell.metalix.in/blog/google-sheets-mail-merge-free.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://copydowell.metalix.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://copydowell.metalix.in/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Free mail merge from Google Sheets", "item": "https://copydowell.metalix.in/blog/google-sheets-mail-merge-free.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I do a free mail merge from Google Sheets?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Install the free CopydoWell Chrome extension, open the side panel on your recipient sheet, choose the column that holds email addresses, write a subject and message using {{ColumnName}} placeholders to personalize each email, then use Preview count and Send test to yourself before Send now. It sends from your own Gmail account, so there is no separate email service to pay for." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I send attachments with a free mail merge?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. CopydoWell supports attachments for free — either the same file for everyone or a different file per row from a column of Google Drive links. Many other free mail merge tools make attachments a paid feature. The linked files must be shared as 'Anyone with the link can view.'" }
+    },
+    {
+      "@type": "Question",
+      "name": "How many emails can I send per day?",
+      "acceptedAnswer": { "@type": "Answer", "text": "CopydoWell sends through your own Gmail account, so your limit is Google's daily sending quota — commonly around 500 recipients per day for personal Gmail and up to about 2,000 for Google Workspace accounts. These limits are set and enforced by Google, not by CopydoWell." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does CopydoWell read my emails?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The extension uses a send-only Gmail scope, which cannot read your inbox or messages. It sends nothing to any outside server — everything runs on your own Google sign-in." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>CopydoWell Blog</h1>
+    <p>Practical guides for moving data between Google Sheets — without the formula headaches.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="/index.html">Home</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="nav">Add to Chrome</a>
+    <a href="/donate.html">Donate</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+  </div>
+</nav>
+
+<main>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/index.html">Home</a> › <a href="/blog/">Blog</a> › Free mail merge from Google Sheets
+  </nav>
+
+  <article>
+    <h1>Free mail merge from Google Sheets (with attachments &amp; rich text)</h1>
+    <p class="post-meta">By Metalix · July 18, 2026 · 6 min read</p>
+
+    <p class="lead">"Free mail merge" usually comes with an asterisk: a tiny daily cap, no attachments, and plain-text only unless you upgrade. This guide shows how to send personalized bulk email straight from a Google Sheet — <strong>including attachments and formatting</strong> — without paying for any of that.</p>
+
+    <h2>The "free" mail merge trap</h2>
+    <p>Most free mail merge tools give you the merge itself, then paywall the parts you actually need:</p>
+    <ul>
+      <li><strong>Attachments</strong> — sending an invoice, ticket, or PDF per person is almost always a paid feature.</li>
+      <li><strong>Rich text</strong> — bold, color, and links often require an upgrade; the free tier sends plain text.</li>
+      <li><strong>A hard daily cap</strong> — many free plans stop you well below what your own Gmail account already allows.</li>
+    </ul>
+    <p><a href="/index.html">CopydoWell</a> takes a different approach: it's a free Chrome extension that sends through <em>your own</em> Gmail account, so those three things aren't upsells — they're just included.</p>
+
+    <h2>How to send a mail merge from Google Sheets, step by step</h2>
+    <ol>
+      <li><strong>Prepare your sheet.</strong> One row per recipient, with a header row. Include a column of email addresses and any columns you want to personalize with (first name, order ID, amount, and so on).</li>
+      <li><strong>Open the side panel</strong> on that spreadsheet and switch to the <strong>Mail Merge</strong> tab.</li>
+      <li><strong>Pick the recipients.</strong> Choose the sheet and the column that holds each email address.</li>
+      <li><strong>Write your email.</strong> Add a subject and message, and drop in <code>{{ColumnName}}</code> anywhere to insert that row's value — e.g. <code>Hi {{First Name}}, your order {{Order ID}} has shipped.</code></li>
+      <li><strong>Format it.</strong> Use the rich-text toolbar for bold, italic, and color, or paste formatted content from a doc.</li>
+      <li><strong>Preview and test.</strong> Use <strong>Preview count</strong> to see exactly how many recipients match, then <strong>Send test to me</strong> to check it looks right in a real inbox.</li>
+      <li><strong>Send.</strong> Click <strong>Send now</strong> and confirm the recipient count. Each person gets their own personalized email.</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>Always test first.</strong> Preview the count and send a test to yourself before every real send. A mail merge goes out fast and can't be recalled.</p>
+    </div>
+
+    <h2>Personalize with <code>{{placeholders}}</code></h2>
+    <p>Any header in your sheet becomes a merge field. Write <code>{{Column Name}}</code> exactly as the header appears, and each recipient's row fills it in:</p>
+    <ul>
+      <li>Subject: <code>Your {{Month}} statement is ready, {{First Name}}</code></li>
+      <li>Body: <code>Hi {{First Name}}, your balance is {{Balance}}. Thanks for being with us since {{Join Year}}.</code></li>
+    </ul>
+    <p>Tip: format <em>around</em> a placeholder rather than bolding only part of it, so the <code>{{ }}</code> tag isn't split apart before it's filled in.</p>
+
+    <h2>Attachments — for free</h2>
+    <p>This is the part most free tools charge for. CopydoWell gives you two attachment modes:</p>
+    <ul>
+      <li><strong>Same file for everyone</strong> — paste one Google Drive link (e.g. a brochure or flyer) and it's attached to every email.</li>
+      <li><strong>A different file per row</strong> — point to a column of Drive links, so each recipient gets their own file (their invoice, their ticket, their certificate). Put several comma-separated links in a cell to send more than one.</li>
+    </ul>
+    <p>The one requirement: each linked file must be shared as <strong>"Anyone with the link can view"</strong>, since the extension fetches it from that link. Private files can't be pulled in this way.</p>
+
+    <h2>About sending limits (an honest note)</h2>
+    <p>Because CopydoWell sends from your own Gmail, your ceiling is <strong>Google's</strong> daily sending quota — roughly 500 recipients/day on personal Gmail and up to about 2,000/day on Google Workspace. That's set and enforced by Google, not CopydoWell, so we won't pretend you can blast unlimited mail. For most outreach, recruiting, class, or small-business lists, it's plenty; for very large campaigns, spread sends across days.</p>
+
+    <h2>What's usually paid elsewhere vs. free here</h2>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th>Feature</th><th>Typical free mail merge</th><th>CopydoWell</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Personalization</th><td class="yes">Usually free</td><td class="yes">Free</td></tr>
+          <tr><th>Attachments</th><td class="no">Paid</td><td class="yes">Free</td></tr>
+          <tr><th>Rich text / formatting</th><td class="no">Often paid</td><td class="yes">Free</td></tr>
+          <tr><th>Per-row attachments</th><td class="no">Paid / rare</td><td class="yes">Free</td></tr>
+          <tr><th>Daily send limit</th><td>Tool's own low cap</td><td class="yes">Your full Gmail quota</td></tr>
+          <tr><th>Sends via your Gmail</th><td>Sometimes a relay server</td><td class="yes">Yes — your account</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cta-box">
+      <h3>Send your first free mail merge in minutes</h3>
+      <p>Personalized bulk email from Google Sheets — attachments and rich text included, no upgrade.</p>
+      <a class="cta" href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="mailmerge_post">Add CopydoWell to Chrome — free</a>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>How do I do a free mail merge from Google Sheets?</summary>
+        <p>Install the free CopydoWell Chrome extension, open the side panel on your recipient sheet, choose the column that holds email addresses, write a subject and message using <code>{{ColumnName}}</code> placeholders to personalize each email, then use Preview count and Send test to yourself before Send now. It sends from your own Gmail account, so there's no separate email service to pay for.</p>
+      </details>
+      <details>
+        <summary>Can I send attachments with a free mail merge?</summary>
+        <p>Yes. CopydoWell supports attachments for free — either the same file for everyone or a different file per row from a column of Google Drive links. Many other free mail merge tools make attachments a paid feature. The linked files must be shared as "Anyone with the link can view."</p>
+      </details>
+      <details>
+        <summary>How many emails can I send per day?</summary>
+        <p>CopydoWell sends through your own Gmail account, so your limit is Google's daily sending quota — commonly around 500 recipients per day for personal Gmail and up to about 2,000 for Google Workspace accounts. These limits are set and enforced by Google, not by CopydoWell.</p>
+      </details>
+      <details>
+        <summary>Does CopydoWell read my emails?</summary>
+        <p>No. The extension uses a send-only Gmail scope, which cannot read your inbox or messages. It sends nothing to any outside server — everything runs on your own Google sign-in.</p>
+      </details>
+    </div>
+
+    <div class="related">
+      <h2>Related guides</h2>
+      <ul>
+        <li><a href="/blog/copydowell-vs-mailmeteor.html">CopydoWell vs. Mailmeteor: which mail merge tool fits you?</a></li>
+        <li><a href="/blog/importrange-alternative-google-sheets.html">A simple IMPORTRANGE alternative for Google Sheets</a></li>
+      </ul>
+    </div>
+  </article>
+</main>
+
+<footer>
+  &copy; 2026 Metalix &middot; <a href="/index.html">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Service</a> &middot; <a href="#" class="manage-cookies">Manage cookies</a>
+</footer>
+<script>
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-ga-event]');
+    if (!el || typeof gtag !== 'function') return;
+    gtag('event', el.getAttribute('data-ga-event'), {
+      cta_location: el.getAttribute('data-ga-label') || '',
+      link_url: el.getAttribute('href') || ''
+    });
+  });
+</script>
+<script src="/consent.js"></script>
+</body>
+</html>

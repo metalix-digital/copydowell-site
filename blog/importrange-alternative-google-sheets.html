@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IMPORTRANGE Alternative for Google Sheets — Copy Data Without Formulas | CopydoWell</title>
+<meta name="description" content="Tired of IMPORTRANGE breaking, permission prompts, and #REF! errors? Here's a simple IMPORTRANGE alternative that copies data between Google Sheets — pick columns, sort, filter, and schedule it, no formulas needed.">
+<link rel="canonical" href="https://copydowell.metalix.in/blog/importrange-alternative-google-sheets.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IMPORTRANGE Alternative for Google Sheets — Copy Data Without Formulas">
+<meta property="og:description" content="A simple way to copy data between two Google Sheets without IMPORTRANGE — pick columns, sort, filter, and keep it in sync on a schedule.">
+<meta property="og:url" content="https://copydowell.metalix.in/blog/importrange-alternative-google-sheets.html">
+<meta property="og:image" content="https://copydowell.metalix.in/images/marquee-1400x560.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog/blog.css">
+<!-- Google Analytics (GA4) with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-570SE982X2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500
+  });
+  try { if (localStorage.getItem('cdw_consent') === 'granted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}
+  gtag('js', new Date());
+  gtag('config', 'G-570SE982X2');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "IMPORTRANGE Alternative for Google Sheets — Copy Data Without Formulas",
+  "description": "A simple IMPORTRANGE alternative that copies data between Google Sheets — pick columns, sort, filter, and schedule it, no formulas needed.",
+  "image": "https://copydowell.metalix.in/images/marquee-1400x560.png",
+  "author": { "@type": "Organization", "name": "Metalix" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CopydoWell",
+    "logo": { "@type": "ImageObject", "url": "https://copydowell.metalix.in/images/marquee-1400x560.png" }
+  },
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-18",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://copydowell.metalix.in/blog/importrange-alternative-google-sheets.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://copydowell.metalix.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://copydowell.metalix.in/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "IMPORTRANGE alternative", "item": "https://copydowell.metalix.in/blog/importrange-alternative-google-sheets.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best alternative to IMPORTRANGE in Google Sheets?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If you want a real, independent copy of data instead of a live formula link, the simplest alternative is a copy tool like CopydoWell. It pulls data from a source spreadsheet into your current one, lets you pick columns, sort, and filter, and can run on a schedule to stay fresh — without any IMPORTRANGE formula or the permission prompts and #REF! errors that come with it." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does IMPORTRANGE keep breaking or showing #REF!?",
+      "acceptedAnswer": { "@type": "Answer", "text": "IMPORTRANGE is a live link between two files. It shows #REF! until access is granted, and it can break when the source is renamed, moved, its sharing changes, rows or columns are inserted, or the source is temporarily unavailable. Because the value is recalculated rather than stored, anything that interrupts the connection removes the data." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I copy only specific columns between two Google Sheets?",
+      "acceptedAnswer": { "@type": "Answer", "text": "IMPORTRANGE pulls a whole range as-is, so trimming to specific columns usually means wrapping it in QUERY or ARRAYFORMULA. With CopydoWell you tick the columns you want, set their order, and optionally sort and filter the rows — no formula required." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is CopydoWell free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The CopydoWell Chrome extension is free, including copying, sorting, filtering, scheduled syncs, and mail merge. It runs on your own Google sign-in and sends nothing to any outside server." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>CopydoWell Blog</h1>
+    <p>Practical guides for moving data between Google Sheets — without the formula headaches.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="/index.html">Home</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="nav">Add to Chrome</a>
+    <a href="/donate.html">Donate</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+  </div>
+</nav>
+
+<main>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/index.html">Home</a> › <a href="/blog/">Blog</a> › IMPORTRANGE alternative
+  </nav>
+
+  <article>
+    <h1>A simple IMPORTRANGE alternative for Google Sheets (no formulas)</h1>
+    <p class="post-meta">By Metalix · July 18, 2026 · 6 min read</p>
+
+    <p class="lead">If you've ever watched <code>IMPORTRANGE</code> return <code>#REF!</code> right before a meeting, you already know the problem: it's a <em>live link</em>, and live links break. This guide shows a different approach — copying the data into a real, independent sheet you control — and when you should still reach for IMPORTRANGE anyway.</p>
+
+    <h2>Why people look for an IMPORTRANGE alternative</h2>
+    <p><code>IMPORTRANGE</code> is genuinely useful, but it has a set of rough edges that send people searching for something else:</p>
+    <ul>
+      <li><strong>The permission dance.</strong> Every new connection needs a manual "Allow access" click, and if the source's sharing changes, the link can silently stop working.</li>
+      <li><strong>#REF! and #N/A errors.</strong> Rename the source, move it, delete a tab, or hit a momentary Google hiccup and your imported range can vanish.</li>
+      <li><strong>It's the whole range or nothing.</strong> Want only three of twelve columns, in a different order? You end up nesting it inside <code>QUERY</code> or <code>ARRAYFORMULA</code>.</li>
+      <li><strong>No sorting or filtering on the way in.</strong> The data lands exactly as it is in the source; shaping it means more formulas on top.</li>
+      <li><strong>It slows big sheets down.</strong> Many IMPORTRANGE calls recalculate constantly and can make a workbook sluggish.</li>
+      <li><strong>You can't edit the result.</strong> It's a formula output, so you can't touch a single cell of it without breaking the array.</li>
+    </ul>
+
+    <h2>The real difference: a live link vs. a real copy</h2>
+    <p>This is the crux of it. <code>IMPORTRANGE</code> gives you a <strong>live reference</strong> — the data isn't really <em>in</em> your sheet, it's being pulled in on every recalculation. That's perfect when you truly need always-current values inside a formula model.</p>
+    <p>But a lot of the time what you actually want is a <strong>real copy</strong>: a static snapshot that lives in your sheet, that you can edit, format, and reorder, and that won't disappear because someone renamed a file. A monthly report, a cleaned-up client list, a filtered view for one team — these are copies, not live links.</p>
+
+    <div class="callout">
+      <p><strong>Rule of thumb:</strong> if you need the number to change the instant the source changes, use IMPORTRANGE. If you need a dependable, editable copy — even one that refreshes on a schedule — copy the data instead.</p>
+    </div>
+
+    <h2>Copying between two sheets manually (and why it gets old)</h2>
+    <p>You can always do it by hand:</p>
+    <ol>
+      <li>Open the source spreadsheet, select the range, and copy it.</li>
+      <li>Switch to your destination sheet and paste — or use <strong>File → Import → Insert new sheet</strong>.</li>
+      <li>Delete the columns you don't want, then sort and filter to taste.</li>
+    </ol>
+    <p>That's fine once. It's miserable every morning. And it's exactly the repetitive job that pushes people toward IMPORTRANGE in the first place — even though IMPORTRANGE solves "keep it fresh" by reintroducing "it keeps breaking."</p>
+
+    <h2>The two-click way with CopydoWell</h2>
+    <p><a href="/index.html">CopydoWell</a> is a free Chrome extension (and Google Sheets add-on) that copies data between spreadsheets from a side panel, right next to your sheet. Instead of a formula, you configure a copy:</p>
+    <ol>
+      <li><strong>Destination</strong> — pick a sheet in the spreadsheet you have open, and choose overwrite or append.</li>
+      <li><strong>Source</strong> — paste the URL of the spreadsheet to pull <em>from</em> and choose which tab.</li>
+      <li><strong>Columns</strong> — tick only the columns you want and reorder them; the destination doesn't have to match the source.</li>
+      <li><strong>Sort &amp; filter</strong> — sort by any column and add conditions like "Status equals Active," so only the rows you care about come across.</li>
+      <li><strong>Run now</strong> — the data is copied in as real, editable values with clean formatting.</li>
+    </ol>
+    <p>Need it to stay current? Save the same setup as a <a href="/blog/sync-two-google-sheets-automatically.html">scheduled trigger</a> — every N minutes, hourly, or daily — with an "only run if the source changed" option so it skips redundant copies. You get IMPORTRANGE's "always fresh" benefit without its fragility, because each run produces a clean, standalone copy.</p>
+    <p>Crucially, it runs on <strong>your own Google sign-in</strong> and talks directly to the Google Sheets API — there's no third-party server in the middle receiving your data.</p>
+
+    <h2>IMPORTRANGE vs. copying with CopydoWell</h2>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th>&nbsp;</th><th>IMPORTRANGE</th><th>CopydoWell copy</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>What you get</th><td>Live formula link</td><td class="yes">Real, editable copy</td></tr>
+          <tr><th>Breaks on rename / re-share</th><td class="no">Often</td><td class="yes">No — copy is independent</td></tr>
+          <tr><th>Pick specific columns</th><td>Needs QUERY / ARRAYFORMULA</td><td class="yes">Tick boxes</td></tr>
+          <tr><th>Reorder columns</th><td>Extra formulas</td><td class="yes">↑ / ↓ buttons</td></tr>
+          <tr><th>Sort &amp; filter rows</th><td>Extra formulas</td><td class="yes">Built in</td></tr>
+          <tr><th>Edit the result</th><td class="no">No</td><td class="yes">Yes</td></tr>
+          <tr><th>Keep it fresh</th><td class="yes">Instant, always live</td><td>Scheduled refresh</td></tr>
+          <tr><th>Formulas required</th><td class="no">Yes</td><td class="yes">None</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>When you should still use IMPORTRANGE</h2>
+    <p>To be fair — IMPORTRANGE is the right tool when:</p>
+    <ul>
+      <li>You need a value to update <strong>the instant</strong> the source does (a live dashboard cell, a running total).</li>
+      <li>The reference feeds directly into other formulas in a calculation model.</li>
+      <li>The range is small and the source is stable and under your control.</li>
+    </ul>
+    <p>If that's you, keep the formula. If instead you keep fighting broken links, permission prompts, and reshaping data with nested functions, a copy is almost always the calmer path.</p>
+
+    <div class="cta-box">
+      <h3>Stop fighting broken IMPORTRANGE links</h3>
+      <p>Copy, sort, filter, and schedule data between Google Sheets — free, no formulas, no server.</p>
+      <a class="cta" href="https://chromewebstore.google.com/detail/copydowell/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="importrange_post">Add CopydoWell to Chrome — free</a>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>What is the best alternative to IMPORTRANGE in Google Sheets?</summary>
+        <p>If you want a real, independent copy instead of a live formula link, a copy tool like CopydoWell is the simplest option. It pulls data from a source spreadsheet into your current one, lets you pick columns, sort, and filter, and can run on a schedule — without any IMPORTRANGE formula or the permission prompts and #REF! errors that come with it.</p>
+      </details>
+      <details>
+        <summary>Why does IMPORTRANGE keep breaking or showing #REF!?</summary>
+        <p>IMPORTRANGE is a live link between two files. It shows #REF! until access is granted, and it can break when the source is renamed, moved, its sharing changes, rows or columns are inserted, or the source is briefly unavailable. Because the value is recalculated rather than stored, anything that interrupts the connection removes the data.</p>
+      </details>
+      <details>
+        <summary>Can I copy only specific columns between two Google Sheets?</summary>
+        <p>IMPORTRANGE pulls a whole range as-is, so trimming to specific columns usually means wrapping it in QUERY or ARRAYFORMULA. With CopydoWell you tick the columns you want, set their order, and optionally sort and filter the rows — no formula required.</p>
+      </details>
+      <details>
+        <summary>Is CopydoWell free?</summary>
+        <p>Yes. The CopydoWell Chrome extension is free, including copying, sorting, filtering, scheduled syncs, and mail merge. It runs on your own Google sign-in and sends nothing to any outside server.</p>
+      </details>
+    </div>
+
+    <div class="related">
+      <h2>Related guides</h2>
+      <ul>
+        <li><a href="/blog/sync-two-google-sheets-automatically.html">How to sync two Google Sheets automatically</a></li>
+        <li><a href="/blog/google-sheets-mail-merge-free.html">Free mail merge from Google Sheets (with attachments)</a></li>
+      </ul>
+    </div>
+  </article>
+</main>
+
+<footer>
+  &copy; 2026 Metalix &middot; <a href="/index.html">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Service</a> &middot; <a href="#" class="manage-cookies">Manage cookies</a>
+</footer>
+<script>
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-ga-event]');
+    if (!el || typeof gtag !== 'function') return;
+    gtag('event', el.getAttribute('data-ga-event'), {
+      cta_location: el.getAttribute('data-ga-label') || '',
+      link_url: el.getAttribute('href') || ''
+    });
+  });
+</script>
+<script src="/consent.js"></script>
+</body>
+</html>
