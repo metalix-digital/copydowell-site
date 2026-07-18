@@ -44,7 +44,7 @@
 </nav>
 
 <main>
-  <p class="updated"><strong>Last updated:</strong> July 17, 2026</p>
+  <p class="updated"><strong>Last updated:</strong> July 18, 2026</p>
 
   <p>CopydoWell is provided by Metalix ("we", "us", "our") as two related products: a Google Sheets add-on and a companion Chrome extension. This policy covers both — sections are marked where they apply to only one.</p>
 
@@ -90,6 +90,19 @@
   <h2>Website analytics</h2>
   <p>This informational website (<code>copydowell.metalix.in</code>) uses <strong>Google Analytics 4</strong> to understand aggregate, anonymous visitor traffic — such as page views, approximate region, and referral source — so we can improve the site. Google Analytics sets cookies and processes this data on our behalf; see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. We do not use this data for advertising or to identify individual visitors. Analytics cookies are <strong>disabled by default</strong> and are only enabled if you click "Accept" on our cookie banner (Google Consent Mode); you can decline, and your choice is remembered.</p>
   <p>This analytics applies <strong>only to the website</strong>. The CopydoWell products themselves — the Google Sheets add-on and the Chrome extension — contain <strong>no analytics or tracking</strong> and send no usage data to us. You can opt out of Google Analytics across all sites with the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+  <h2>How we protect sensitive data</h2>
+  <p>CopydoWell accesses Google user data (spreadsheet contents and the ability to send email as you) only through Google's official APIs, under your own OAuth authorization. The mechanisms protecting that data:</p>
+  <ul>
+    <li><strong>No server-side storage or processing.</strong> We operate no backend server. Spreadsheet data and email content are processed only inside Google's own infrastructure (Apps Script, Sheets API, Gmail API) and, for the Chrome extension, in memory in your local browser session. Google user data is never transmitted to, stored on, or logged by any system we control.</li>
+    <li><strong>Encryption in transit.</strong> All communication with Google APIs uses HTTPS/TLS encryption end-to-end. There is no non-Google network destination in either product.</li>
+    <li><strong>Encryption and security at rest.</strong> The only data at rest is your own configuration: add-on automation settings are stored in Apps Script Document Properties inside Google's infrastructure (protected by Google's <a href="https://cloud.google.com/security/encryption/default-encryption" target="_blank" rel="noopener">encryption at rest</a>); extension trigger settings are stored in Chrome's extension storage on your own device, protected by your operating system's user account. Neither store contains your spreadsheet contents or email bodies — only the settings you configured (source/destination references, filters, schedules).</li>
+    <li><strong>OAuth tokens are handled by Google.</strong> We never see, store, or transmit your Google password. Access tokens are issued, stored, and refreshed by Google's own Apps Script runtime (add-on) or Chrome's identity API (extension) — never by code or systems we operate.</li>
+    <li><strong>Least-privilege scopes.</strong> Each product requests only the narrowest scopes needed for its user-facing features — for example, the extension's Gmail scope is <code>gmail.send</code> (send-only), which cannot read, list, or search your mail.</li>
+    <li><strong>Limited internal access.</strong> Because no Google user data ever reaches us, there is nothing for Metalix personnel to access, and no third party receives Google user data from us.</li>
+    <li><strong>Incident response.</strong> In the unlikely event of a security issue affecting either product, we will notify affected users via the Chrome Web Store / Google Workspace Marketplace listing and this website, and can be reached at <a href="mailto:support@metalix.in">support@metalix.in</a>.</li>
+  </ul>
+  <p>CopydoWell's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. CopydoWell does not use any Google user data to develop, improve, or train generalized artificial intelligence or machine learning models.</p>
 
   <h2>What we do not do (in the products)</h2>
   <ul>
