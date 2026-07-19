@@ -58,6 +58,21 @@ table.cmp td.no { color: #c5221f; }
 .cta-box p { margin: 0 0 16px; opacity: 0.92; font-size: 15px; }
 .cta-box .cta { margin-top: 0; }
 
+/* share bar */
+.share { margin-top: 36px; border-top: 1px solid #e0e0e0; padding-top: 20px; }
+.share h2 { font-size: 16px; margin: 0 0 12px; }
+.share-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+.share-buttons a, .share-buttons button {
+  display: inline-flex; align-items: center; gap: 7px;
+  border: 1px solid #dadce0; border-radius: 999px; background: #fff;
+  color: #3c4043; font-family: inherit; font-size: 13.5px; font-weight: 600;
+  padding: 9px 14px; text-decoration: none; cursor: pointer;
+  transition: border-color .15s ease, color .15s ease, background .15s ease;
+}
+.share-buttons a:hover, .share-buttons button:hover { border-color: #1a73e8; color: #1a73e8; background: #e8f0fe; }
+.share-buttons svg { width: 16px; height: 16px; fill: currentColor; flex: none; }
+.share-copy.copied, .share-copy.copied:hover { border-color: #137333; color: #137333; background: #e6f4ea; }
+
 /* related posts */
 .related { margin-top: 40px; border-top: 1px solid #e0e0e0; padding-top: 20px; }
 .related h2 { font-size: 16px; margin-top: 0; }
