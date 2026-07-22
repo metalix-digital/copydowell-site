@@ -1,7 +1,7 @@
 # CopydoWell — Website
 
 The marketing and information site for **CopydoWell**, a Google Sheets add-on and Chrome
-extension that copies, sorts, filters, and mail-merges data between spreadsheets.
+extension that copies, sorts, filters, and syncs data between spreadsheets.
 
 🌐 Live: **https://copydowell.metalix.in**
 

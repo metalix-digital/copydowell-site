@@ -44,7 +44,7 @@
 </nav>
 
 <main>
-  <p class="updated"><strong>Last updated:</strong> July 18, 2026</p>
+  <p class="updated"><strong>Last updated:</strong> July 22, 2026</p>
 
   <p>CopydoWell is provided by Metalix ("we", "us", "our") as two related products: a Google Sheets add-on and a companion Chrome extension. This policy covers both — sections are marked where they apply to only one.</p>
 
@@ -56,13 +56,13 @@
     <li><strong><code>https://www.googleapis.com/auth/spreadsheets</code></strong> — read and write access to Google Sheets you open the add-on in, or that you explicitly point it to (via a spreadsheet URL/ID you enter into the sidebar).</li>
     <li><strong><code>https://www.googleapis.com/auth/script.container.ui</code></strong> — to display its sidebar and menu inside Google Sheets.</li>
     <li><strong><code>https://www.googleapis.com/auth/script.scriptapp</code></strong> — to create, list, and remove the installable triggers that power the optional Automation feature (run on edit, on form submission, or on a schedule), only when you explicitly enable it.</li>
-    <li><strong><code>https://www.googleapis.com/auth/script.send_mail</code></strong> — used by Mail Merge to send email as you, only when you click "Send now" or "Send test to myself."</li>
+    <li><strong><code>https://www.googleapis.com/auth/userinfo.email</code></strong> — to identify the Google account you're signed in with, shown in the sidebar.</li>
   </ul>
 
   <h3>How it's used</h3>
   <ul>
     <li>All spreadsheet data is processed entirely within Google's Apps Script infrastructure, running under your own Google account's authorization.</li>
-    <li>Data is copied, sorted, and filtered, or mail merge emails are sent, only at your explicit request or via automation you personally configured and can disable at any time.</li>
+    <li>Data is copied, sorted, and filtered only at your explicit request or via automation you personally configured and can disable at any time.</li>
     <li>Automation settings (source sheet, destination spreadsheet, sort/filter rules) are stored using Apps Script's Document Properties service, scoped to the specific spreadsheet you configured — this stays inside your own Google Workspace environment.</li>
   </ul>
 
@@ -71,17 +71,15 @@
   <h3>What it accesses</h3>
   <p>The extension requests:</p>
   <ul>
-    <li><strong><code>https://www.googleapis.com/auth/spreadsheets</code></strong> — same purpose as above, via the Sheets API directly.</li>
-    <li><strong><code>https://www.googleapis.com/auth/gmail.send</code></strong> — used by Mail Merge to send email via the Gmail API on your behalf, only when you click "Send now" or "Send test to myself." This is a send-only scope; the extension cannot read your Gmail messages.</li>
+    <li><strong><code>https://www.googleapis.com/auth/spreadsheets</code></strong> — same purpose as above, via the Sheets API directly. This is the only OAuth scope the extension requests.</li>
   </ul>
   <p>It also uses these browser permissions:</p>
   <ul>
-    <li><strong>identity</strong> — to sign you into Google and to look up your signed-in email for "Send test to myself" (via Chrome's own profile info, not a Google API call).</li>
+    <li><strong>identity</strong> — to sign you into Google so the extension can access the Sheets API on your behalf.</li>
     <li><strong>storage</strong> — to save your configured triggers (source, destination, filters, schedule) locally in your browser.</li>
     <li><strong>alarms</strong> — to run your scheduled triggers at the times you set.</li>
     <li><strong>notifications</strong> — to alert you if a scheduled trigger fails.</li>
     <li>Read-only access to the active tab's URL on <code>docs.google.com</code> — only to detect which spreadsheet is open, so the destination is set automatically.</li>
-    <li>Access to <code>drive.google.com</code> and <code>drive.usercontent.google.com</code> (Google's file-download host) — only to download attachment/image files you link from Google Drive for Mail Merge, and only files shared as "Anyone with the link can view." No Drive API or broader Drive access is used.</li>
   </ul>
 
   <h3>Donations</h3>
@@ -92,13 +90,13 @@
   <p>This analytics applies <strong>only to the website</strong>. The CopydoWell products themselves — the Google Sheets add-on and the Chrome extension — contain <strong>no analytics or tracking</strong> and send no usage data to us. You can opt out of Google Analytics across all sites with the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
 
   <h2>How we protect sensitive data</h2>
-  <p>CopydoWell accesses Google user data (spreadsheet contents and the ability to send email as you) only through Google's official APIs, under your own OAuth authorization. The mechanisms protecting that data:</p>
+  <p>CopydoWell accesses Google user data (your spreadsheet contents) only through Google's official APIs, under your own OAuth authorization. The mechanisms protecting that data:</p>
   <ul>
-    <li><strong>No server-side storage or processing.</strong> We operate no backend server. Spreadsheet data and email content are processed only inside Google's own infrastructure (Apps Script, Sheets API, Gmail API) and, for the Chrome extension, in memory in your local browser session. Google user data is never transmitted to, stored on, or logged by any system we control.</li>
+    <li><strong>No server-side storage or processing.</strong> We operate no backend server. Spreadsheet data is processed only inside Google's own infrastructure (Apps Script, Sheets API) and, for the Chrome extension, in memory in your local browser session. Google user data is never transmitted to, stored on, or logged by any system we control.</li>
     <li><strong>Encryption in transit.</strong> All communication with Google APIs uses HTTPS/TLS encryption end-to-end. There is no non-Google network destination in either product.</li>
-    <li><strong>Encryption and security at rest.</strong> The only data at rest is your own configuration: add-on automation settings are stored in Apps Script Document Properties inside Google's infrastructure (protected by Google's <a href="https://cloud.google.com/security/encryption/default-encryption" target="_blank" rel="noopener">encryption at rest</a>); extension trigger settings are stored in Chrome's extension storage on your own device, protected by your operating system's user account. Neither store contains your spreadsheet contents or email bodies — only the settings you configured (source/destination references, filters, schedules).</li>
+    <li><strong>Encryption and security at rest.</strong> The only data at rest is your own configuration: add-on automation settings are stored in Apps Script Document Properties inside Google's infrastructure (protected by Google's <a href="https://cloud.google.com/security/encryption/default-encryption" target="_blank" rel="noopener">encryption at rest</a>); extension trigger settings are stored in Chrome's extension storage on your own device, protected by your operating system's user account. Neither store contains your spreadsheet contents — only the settings you configured (source/destination references, filters, schedules).</li>
     <li><strong>OAuth tokens are handled by Google.</strong> We never see, store, or transmit your Google password. Access tokens are issued, stored, and refreshed by Google's own Apps Script runtime (add-on) or Chrome's identity API (extension) — never by code or systems we operate.</li>
-    <li><strong>Least-privilege scopes.</strong> Each product requests only the narrowest scopes needed for its user-facing features — for example, the extension's Gmail scope is <code>gmail.send</code> (send-only), which cannot read, list, or search your mail.</li>
+    <li><strong>Least-privilege scopes.</strong> Each product requests only the narrowest scopes needed for its user-facing features — the extension requests only the Google Sheets scope, with no Gmail or Drive access at all.</li>
     <li><strong>Limited internal access.</strong> Because no Google user data ever reaches us, there is nothing for Metalix personnel to access, and no third party receives Google user data from us.</li>
     <li><strong>Incident response.</strong> In the unlikely event of a security issue affecting either product, we will notify affected users via the Chrome Web Store / Google Workspace Marketplace listing and this website, and can be reached at <a href="mailto:support@metalix.in">support@metalix.in</a>.</li>
   </ul>
