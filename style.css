@@ -23,7 +23,7 @@ header .wrap {
   margin: 0 auto;
 }
 
-header h1 {
+header h1, header .site-title {
   margin: 0 0 8px;
   font-size: 32px;
 }
