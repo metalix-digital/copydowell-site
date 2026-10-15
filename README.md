@@ -28,6 +28,25 @@ extension that copies, sorts, filters, and syncs data between spreadsheets.
   footer link re-opens the choice.
 - Pages load **Google Analytics 4** (`gtag.js`) in `<head>`, gated by the consent above.
 
+### Custom events
+
+One delegated click handler per page reads `data-ga-event` / `data-ga-label` off any
+element and sends it as a GA4 event, with the label as `cta_location` and the element's
+`href` as `link_url`. To track something new, add those two attributes — no JS needed.
+
+| Event | Fired by | Labels (`cta_location`) |
+|-------|----------|-------------------------|
+| `add_to_chrome` | every Web Store link | `nav`, `hero`, `install_section`, `blog_index`, `donate_page`, `importrange_post`, `sync_post` |
+| `donate_click` | every donate link | `nav`, `pricing`, `razorpay_button` |
+| `demo_click` | hero "Watch the demo" jump link | `hero` |
+| `video_play` | the demo video facade, on the click that loads the player | `homepage_demo` |
+| `share` | blog post share buttons | `x`, `whatsapp`, `linkedin`, `facebook`, `email`, `copy_link` |
+| `cookie_consent` | `consent.js`, on Accept or Decline | — (choice is in `consent_choice`) |
+
+`cookie_consent` is sent by Consent Mode as a cookieless ping when the visitor declines, so
+the accept/decline split is measurable. Read it first: it's the denominator for everything
+else, since declined sessions don't report the other events.
+
 ## SEO / verification
 
 - `sitemap.xml` and `robots.txt` for search indexing.

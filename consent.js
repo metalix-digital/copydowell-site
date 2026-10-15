@@ -19,6 +19,10 @@
     try { localStorage.setItem(KEY, value); } catch (e) {}
     if (typeof gtag === 'function') {
       gtag('consent', 'update', { analytics_storage: value === 'granted' ? 'granted' : 'denied' });
+      // Consent Mode still delivers this as a cookieless ping when denied, so the
+      // accept/decline split is measurable — without it there's no way to tell how
+      // much of the traffic the other events are missing.
+      gtag('event', 'cookie_consent', { consent_choice: value });
     }
     removeBar();
   }
@@ -33,7 +37,7 @@
     bar.setAttribute('aria-label', 'Cookie consent');
     bar.innerHTML =
       '<span class="cc-text">We use Google Analytics cookies to measure site traffic. ' +
-      'You can accept or decline. See our <a href="privacy.html">Privacy Policy</a>.' +
+      'You can accept or decline. See our <a href="/privacy.html">Privacy Policy</a>.' +
       (current ? ' <em>Current choice: ' + current + '.</em>' : '') +
       '</span>' +
       '<span class="cc-actions">' +
