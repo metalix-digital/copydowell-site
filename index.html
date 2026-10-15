@@ -13,6 +13,10 @@
 <meta property="og:url" content="https://copydowell.metalix.in/">
 <meta property="og:image" content="https://copydowell.metalix.in/images/marquee-1400x560.png">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="icon" type="image/png" href="images/copydowell-mark.png">
 <link rel="stylesheet" href="style.css">
 <!-- Google Analytics (GA4) with Consent Mode v2 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-570SE982X2"></script>
@@ -63,7 +67,7 @@
   "@type": "VideoObject",
   "name": "CopydoWell demo — copy and sync data between Google Sheets",
   "description": "See CopydoWell copy data between two Google Sheets and schedule automatic syncs — from a Chrome side panel and a Google Sheets add-on. No formulas, no IMPORTRANGE.",
-  "thumbnailUrl": "https://i.ytimg.com/vi/l5BDo3QF-aQ/hqdefault.jpg",
+  "thumbnailUrl": "https://copydowell.metalix.in/images/video-cover-1280x720.png",
   "uploadDate": "2026-07-22T00:00:00+05:30",
   "embedUrl": "https://www.youtube-nocookie.com/embed/l5BDo3QF-aQ",
   "contentUrl": "https://www.youtube.com/watch?v=l5BDo3QF-aQ"
@@ -81,33 +85,46 @@
 </script>
 </head>
 <body>
-<header>
+<nav class="site-nav">
   <div class="wrap">
-    <h1>CopydoWell</h1>
-    <p>Copy, sort, filter, and sync data between Google Sheets — as a Sheets add-on or a Chrome extension.</p>
-    <a class="cta" href="https://chromewebstore.google.com/detail/copydowell-%e2%80%94-copy-google/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="hero">Add to Chrome — it's free</a>
-  </div>
-</header>
-
-<nav>
-  <div class="wrap">
-    <a href="/">Home</a>
-    <a href="blog/">Blog</a>
-    <a href="https://chromewebstore.google.com/detail/copydowell-%e2%80%94-copy-google/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="nav">Add to Chrome</a>
-    <a href="donate.html" data-ga-event="donate_click" data-ga-label="nav">Donate</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
+    <a class="brand" href="/"><img src="images/copydowell-mark.png" alt="" width="30" height="30">CopydoWell</a>
+    <div class="nav-links">
+      <a href="/" aria-current="page">Home</a>
+      <a href="blog/">Blog</a>
+      <a href="donate.html" data-ga-event="donate_click" data-ga-label="nav">Donate</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <a class="cta sm" href="https://chromewebstore.google.com/detail/copydowell-%e2%80%94-copy-google/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="nav">Add to Chrome</a>
   </div>
 </nav>
 
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Copy, sort, filter and sync data between Google Sheets</h1>
+        <p class="lede">CopydoWell moves data between spreadsheets without formulas, IMPORTRANGE, or manual copy-paste — as a Google Sheets add-on or a Chrome side panel.</p>
+        <div class="hero-actions">
+          <a class="cta" href="https://chromewebstore.google.com/detail/copydowell-%e2%80%94-copy-google/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="hero">Add to Chrome — it's free</a>
+          <a class="cta ghost" href="#screenshots">Watch the demo</a>
+        </div>
+        <p class="trust">Free · Works in any Google Sheet · Your data stays inside your own Google account</p>
+      </div>
+      <div>
+        <img class="marquee-banner" src="images/marquee-1400x560.png" alt="CopydoWell — copy, sort, filter, and sync data between Google Sheets" width="1400" height="560">
+      </div>
+    </div>
+  </div>
+</header>
+
 <main>
-  <img class="marquee-banner" src="images/marquee-1400x560.png" alt="CopydoWell — copy, sort, filter, and sync data between Google Sheets">
   <div class="toc">
     <p>On this page</p>
     <ul>
       <li><a href="#what-it-does">What it does</a></li>
       <li><a href="#screenshots">See it in action</a></li>
-      <li><a href="#which-one">Sheets add-on vs. Chrome extension — which one?</a></li>
+      <li><a href="#which-one">Which one should I use?</a></li>
       <li><a href="#addon">Google Sheets add-on</a></li>
       <li><a href="#extension">Chrome extension</a></li>
       <li><a href="#support">Support</a></li>
@@ -116,68 +133,100 @@
 
   <h2 id="what-it-does">What it does</h2>
   <p>CopydoWell moves data between spreadsheets without formulas, IMPORTRANGE, or manual copy-paste. It's available in two forms that share the same core idea — pull, sort, filter, and sync — but work a little differently:</p>
-  <ul>
-    <li>A <strong>Google Sheets add-on</strong>, installed from the Google Workspace Marketplace, opened from the Sheets Extensions menu.</li>
-    <li>A <strong>Chrome extension</strong>, installed from the Chrome Web Store, opened as a side panel next to any Google Sheet.</li>
-  </ul>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Google Sheets add-on</h3>
+      <p>Installed from the Google Workspace Marketplace, opened from the Sheets Extensions menu.</p>
+      <p class="meta">Marketplace → Extensions menu</p>
+    </div>
+    <div class="card">
+      <h3>Chrome extension</h3>
+      <p>Installed from the Chrome Web Store, opened as a side panel next to any Google Sheet.</p>
+      <p class="meta">Web Store → side panel</p>
+    </div>
+  </div>
 
   <h2 id="screenshots">See it in action</h2>
   <div class="video-embed">
-    <iframe src="https://www.youtube-nocookie.com/embed/l5BDo3QF-aQ" title="CopydoWell demo — copy and sync data between Google Sheets" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <button type="button" class="video-facade" data-yt-id="l5BDo3QF-aQ" aria-label="Play the CopydoWell demo video">
+      <img src="images/video-cover-1280x720.png" alt="" width="1280" height="720" loading="lazy">
+    </button>
+    <noscript>
+      <iframe src="https://www.youtube-nocookie.com/embed/l5BDo3QF-aQ" title="CopydoWell demo — copy and sync data between Google Sheets" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </noscript>
   </div>
   <div class="shots">
     <figure>
-      <img src="images/screenshot-copytool-1280x800.png" alt="CopydoWell Copy Tool side panel showing destination, source, sort, filter, and automation options">
+      <img src="images/screenshot-copytool-1280x800.png" alt="CopydoWell Copy Tool side panel showing destination, source, sort, filter, and automation options" loading="lazy" width="1280" height="800">
       <figcaption>Copy Tool — pull, sort, filter, and schedule copies between sheets.</figcaption>
     </figure>
   </div>
 
   <h2 id="which-one">Which one should I use?</h2>
-  <p>Both do the same core job. A few differences worth knowing:</p>
-  <ul>
-    <li>The <strong>Chrome extension</strong> is <strong>free</strong>, and supports <strong>multiple named scheduled triggers</strong> you can list, edit, and delete — each with its own source, destination, and schedule.</li>
-    <li>The <strong>Sheets add-on</strong> is free and additionally supports edit-triggered and form-submit-triggered automation (in addition to scheduling), which the extension cannot do.</li>
-  </ul>
+  <p>Both do the same core job. The differences worth knowing:</p>
+  <div class="table-wrap">
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th scope="col">&nbsp;</th>
+          <th scope="col">Sheets add-on</th>
+          <th scope="col">Chrome extension</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Price</th><td>Free</td><td>Free</td></tr>
+        <tr><th scope="row">Where it opens</th><td>Extensions menu, inside Sheets</td><td>Side panel, next to any Sheet</td></tr>
+        <tr><th scope="row">Scheduled runs</th><td class="yes">Yes — one saved job per spreadsheet</td><td class="yes">Yes — multiple named triggers</td></tr>
+        <tr><th scope="row">Runs when the source sheet is edited</th><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><th scope="row">Runs when the linked form is submitted</th><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><th scope="row">Reorder the destination's columns</th><td class="no">No</td><td class="yes">Yes</td></tr>
+        <tr><th scope="row">Runs with the browser closed</th><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><th scope="row">Run history in the interface</th><td class="no">No</td><td class="yes">Yes</td></tr>
+      </tbody>
+    </table>
+  </div>
 
   <h2 id="addon">Google Sheets add-on</h2>
 
   <h3>Install</h3>
-  <p>Installed from the Google Workspace Marketplace directly into Google Sheets. Once installed, open its tools from the <strong>Extensions</strong> menu in any Google Sheet:</p>
-  <ul>
-    <li><strong>Extensions → CopydoWell → Copy Tool</strong> — copy, sort, filter, and automation</li>
-  </ul>
+  <p>Installed from the Google Workspace Marketplace directly into Google Sheets. Once installed, open its tools from the <strong>Extensions</strong> menu in any Google Sheet: <strong>Extensions → CopydoWell → Copy Tool</strong>.</p>
 
   <h3>Copy Tool</h3>
   <p>The sidebar walks through four steps, plus optional automation.</p>
-
-  <div class="step">
-    <h4>1. Destination</h4>
-    <p>Pick a sheet in the spreadsheet you currently have open — this is where the data will land. Use an existing sheet or create a new one. Choose <strong>Overwrite</strong> to replace its contents each time, or <strong>Append</strong> to add rows below what's already there. "Include header row" controls whether column headers are copied along with the data, and "Apply clean formatting" bolds the header, freezes it, auto-resizes columns, and applies row banding.</p>
+  <div class="step-grid">
+    <div class="step">
+      <span class="num">01</span>
+      <h4>Destination</h4>
+      <p>A sheet in the spreadsheet you have open. Overwrite or append, with optional header row and clean formatting.</p>
+    </div>
+    <div class="step">
+      <span class="num">02</span>
+      <h4>Source</h4>
+      <p>Paste the URL or ID of the spreadsheet to pull from, click <strong>Load source</strong>, then pick a sheet inside it.</p>
+    </div>
+    <div class="step">
+      <span class="num">03</span>
+      <h4>Sort</h4>
+      <p>Optionally choose a source column to sort by, ascending or descending.</p>
+    </div>
+    <div class="step">
+      <span class="num">04</span>
+      <h4>Filter</h4>
+      <p>Add conditions — column, operator, value. All must match for a row to be included.</p>
+    </div>
   </div>
 
-  <div class="step">
-    <h4>2. Source</h4>
-    <p>Paste the URL (or ID) of the spreadsheet you want to pull data <em>from</em>, then click <strong>Load source</strong>. Once connected, pick which sheet within that spreadsheet to read.</p>
-  </div>
-
-  <div class="step">
-    <h4>3. Sort</h4>
-    <p>Optionally choose a column from the source sheet to sort by, ascending or descending.</p>
-  </div>
-
-  <div class="step">
-    <h4>4. Filter</h4>
-    <p>Add one or more conditions (column, operator, value) — for example "Status equals Active." All conditions must match for a row to be included (AND logic). Available operators: equals, not equals, contains, does not contain, greater than, less than, greater or equal, less or equal, is empty, is not empty.</p>
-  </div>
-
+  <h4>What each step covers</h4>
+  <p><strong>Destination</strong> — pick a sheet in the spreadsheet you currently have open; this is where the data will land. Use an existing sheet or create a new one. Choose <strong>Overwrite</strong> to replace its contents each time, or <strong>Append</strong> to add rows below what's already there. "Include header row" controls whether column headers are copied along with the data, and "Apply clean formatting" bolds the header, freezes it, auto-resizes columns, and applies row banding.</p>
+  <p><strong>Filter</strong> operators available: equals, not equals, contains, does not contain, greater than, less than, greater or equal, less or equal, is empty, is not empty.</p>
   <p>Click <strong>Run now</strong> to perform the copy immediately.</p>
 
   <h3>Automation</h3>
   <p>Below Run now, three toggles let a saved job run on its own:</p>
-  <ul>
-    <li><strong>Run automatically when the source sheet is edited</strong> — re-runs the job whenever the source sheet changes.</li>
-    <li><strong>Run automatically when the linked form is submitted</strong> — re-runs the job whenever the source spreadsheet's linked Google Form receives a new response.</li>
-    <li><strong>Run on a schedule</strong> — every N minutes, every N hours, or daily at a chosen hour.</li>
+  <ul class="toggle-list">
+    <li><span class="sw on" aria-hidden="true"></span><span><strong>Run automatically when the source sheet is edited</strong> — re-runs the job whenever the source sheet changes.</span></li>
+    <li><span class="sw" aria-hidden="true"></span><span><strong>Run automatically when the linked form is submitted</strong> — re-runs the job whenever the source spreadsheet's linked Google Form receives a new response.</span></li>
+    <li><span class="sw" aria-hidden="true"></span><span><strong>Run on a schedule</strong> — every N minutes, every N hours, or daily at a chosen hour.</span></li>
   </ul>
   <p>Turning on any toggle saves your current Destination/Source/Sort/Filter settings as "the job" and creates the matching trigger. Turn a toggle off at any time to remove that automation.</p>
 
@@ -191,24 +240,52 @@
   <p>Works like the add-on's Copy Tool, with one addition: after picking which columns to copy, you can use the <strong>↑ / ↓</strong> buttons next to each selected column to set the destination's column order — it doesn't have to match the source sheet's order.</p>
 
   <h3>Triggers</h3>
-  <p>The extension supports <strong>multiple, independent scheduled jobs</strong> at once, each with its own source, destination, and schedule:</p>
+  <p>The extension supports <strong>multiple, independent scheduled jobs</strong> at once, each with its own source, destination, and schedule. The Triggers tab lists every one you've saved:</p>
+  <div class="trigger-grid">
+    <div class="trigger-card">
+      <div class="head">
+        <h4>Daily roll-up</h4>
+        <span class="pill">Success</span>
+      </div>
+      <p>Every day at 09:00 · Orders → Summary</p>
+      <p class="meta">next run in 4h · 182 rows copied</p>
+    </div>
+    <div class="trigger-card">
+      <div class="head">
+        <h4>Hourly sync</h4>
+        <span class="pill neutral">Skipped</span>
+      </div>
+      <p>Every 1 hour · Leads → CRM import</p>
+      <p class="meta">source unchanged since last run</p>
+    </div>
+  </div>
   <ul>
     <li>From the Copy Tool tab's Automation section, name a trigger, set a schedule (every N minutes/hours, or daily at an hour), and click <strong>Add trigger</strong>.</li>
     <li><strong>Only run if the source changed</strong> — an optional switch so a scheduled job skips itself when the source sheet hasn't changed since its last run, avoiding redundant copies.</li>
-    <li>Switch to the <strong>Triggers</strong> tab to see every trigger you've saved — its name, schedule, source, destination, next run time, and a <strong>run history</strong>: the last run's status (success, skipped, or failed), when it ran, and how many rows it copied.</li>
-    <li>Each trigger card has <strong>Edit</strong> (reloads its exact settings into the Copy Tool tab so you can adjust and save changes) and <strong>Delete</strong> (removes it and cancels its schedule) buttons.</li>
+    <li>Each trigger card shows its name, schedule, source, destination, next run time, and a <strong>run history</strong>: the last run's status (success, skipped, or failed), when it ran, and how many rows it copied.</li>
+    <li>Each card has <strong>Edit</strong> (reloads its exact settings into the Copy Tool tab so you can adjust and save changes) and <strong>Delete</strong> (removes it and cancels its schedule) buttons.</li>
   </ul>
   <p>Unlike the add-on, the extension can't react to edits or form submissions directly (a browser extension has no way to be notified the instant a Sheet changes) — only scheduled runs are supported. A trigger only runs while Chrome is open and you remain signed in; if a run fails, you'll get a Chrome notification.</p>
 
   <h3>Pricing</h3>
-  <p>The Chrome extension is <strong>free</strong> — every feature, including scheduled automation, with no purchase required. If it saves you time, donations are welcome and help keep the project running: <a href="donate.html" data-ga-event="donate_click" data-ga-label="pricing">support CopydoWell</a>. See the <a href="terms.html">Terms of Service</a> for details.</p>
+  <div class="callout">
+    <p>The Chrome extension is <strong>free</strong> — every feature, including scheduled automation, with no purchase required. If it saves you time, donations are welcome and help keep the project running: <a href="donate.html" data-ga-event="donate_click" data-ga-label="pricing">support CopydoWell</a>. See the <a href="terms.html">Terms of Service</a> for details.</p>
+  </div>
 
   <h2 id="support">Support</h2>
   <p>Questions or issues, for either product: <a href="mailto:support@metalix.in">support@metalix.in</a></p>
 </main>
 
 <footer>
-  &copy; 2026 Metalix &middot; <a href="blog/">Blog</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a> &middot; <a href="#" class="manage-cookies">Manage cookies</a>
+  <div class="wrap">
+    <p class="copy">&copy; 2026 Metalix &middot; CopydoWell</p>
+    <nav aria-label="Footer">
+      <a href="blog/">Blog</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="#" class="manage-cookies">Manage cookies</a>
+    </nav>
+  </div>
 </footer>
 <script>
   // Track key CTA clicks (Add to Chrome / Donate) as GA4 events.
@@ -219,6 +296,20 @@
       cta_location: el.getAttribute('data-ga-label') || '',
       link_url: el.getAttribute('href') || ''
     });
+  });
+</script>
+<script>
+  // Click-to-load the YouTube player: nothing is requested from YouTube
+  // until the visitor actually asks to watch.
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.video-facade') : null;
+    if (!btn) return;
+    var frame = document.createElement('iframe');
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + btn.getAttribute('data-yt-id') + '?autoplay=1';
+    frame.title = 'CopydoWell demo — copy and sync data between Google Sheets';
+    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    frame.allowFullscreen = true;
+    btn.parentNode.replaceChild(frame, btn);
   });
 </script>
 <script src="consent.js"></script>

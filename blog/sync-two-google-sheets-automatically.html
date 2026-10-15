@@ -12,6 +12,10 @@
 <meta property="og:url" content="https://copydowell.metalix.in/blog/sync-two-google-sheets-automatically.html">
 <meta property="og:image" content="https://copydowell.metalix.in/images/marquee-1400x560.png">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="icon" type="image/png" href="/images/copydowell-mark.png">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/blog/blog.css">
 <!-- Google Analytics (GA4) with Consent Mode v2 -->
@@ -81,21 +85,17 @@
 </script>
 </head>
 <body>
-<header>
+<nav class="site-nav">
   <div class="wrap">
-    <p class="site-title">CopydoWell Blog</p>
-    <p>Practical guides for moving data between Google Sheets — without the formula headaches.</p>
-  </div>
-</header>
-
-<nav>
-  <div class="wrap">
-    <a href="/">Home</a>
-    <a href="/blog/">Blog</a>
-    <a href="https://chromewebstore.google.com/detail/copydowell-%e2%80%94-copy-google/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="nav">Add to Chrome</a>
-    <a href="/donate.html">Donate</a>
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="/terms.html">Terms of Service</a>
+    <a class="brand" href="/"><img src="/images/copydowell-mark.png" alt="" width="30" height="30">CopydoWell</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/blog/" aria-current="page">Blog</a>
+      <a href="/donate.html" data-ga-event="donate_click" data-ga-label="nav">Donate</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </div>
+    <a class="cta sm" href="https://chromewebstore.google.com/detail/copydowell-%e2%80%94-copy-google/fgkggcanaogpklaloeeofbmgglbmghhf" target="_blank" rel="noopener" data-ga-event="add_to_chrome" data-ga-label="nav">Add to Chrome</a>
   </div>
 </nav>
 
@@ -196,7 +196,17 @@
 </main>
 
 <footer>
-  &copy; 2026 Metalix &middot; <a href="/">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Service</a> &middot; <a href="#" class="manage-cookies">Manage cookies</a>
+  <div class="wrap">
+    <p class="copy">&copy; 2026 Metalix &middot; CopydoWell</p>
+    <nav aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/donate.html">Donate</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="#" class="manage-cookies">Manage cookies</a>
+    </nav>
+  </div>
 </footer>
 <script>
   document.addEventListener('click', function (e) {
